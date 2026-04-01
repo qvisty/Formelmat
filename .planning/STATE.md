@@ -22,9 +22,8 @@ MVP er implementeret med alt indhold fra PDF'en digitaliseret og interaktive kom
 - [x] Mobilvenligt responsivt design
 - [x] Krydsreferencer mellem emner og fagord
 
-### Igangværende
-
-- [ ] Opsætning af udviklingsstandarder (AGENTS.md, hooks, CI)
+- [x] Opsætning af udviklingsstandarder (AGENTS.md, hooks, sync.sh)
+- [x] GeoGebra dynamisk integration på 7 indholdssider (geometry + graphing)
 
 ### Næste skridt (Fase 2 – Interaktiv udvidelse)
 
