@@ -1,11 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SearchModal } from "./SearchModal";
 
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <>
@@ -20,10 +31,22 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-6">
             <Link
-              href="/emner/trigonometri"
+              href="/emner/tal-og-algebra"
               className="text-sm font-medium text-muted hover:text-foreground transition-colors"
             >
-              Trigonometri
+              Tal og algebra
+            </Link>
+            <Link
+              href="/emner/geometri"
+              className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+            >
+              Geometri
+            </Link>
+            <Link
+              href="/emner/statistik"
+              className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+            >
+              Statistik
             </Link>
             <Link
               href="/fagord"
