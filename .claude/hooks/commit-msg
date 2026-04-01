@@ -1,0 +1,40 @@
+#!/bin/bash
+# Commit message validation hook
+# Ensures commit messages are descriptive
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Skip merge commits
+if echo "$COMMIT_MSG" | grep -q "^Merge"; then
+  exit 0
+fi
+
+# Skip fixup/squash commits
+if echo "$COMMIT_MSG" | grep -q "^fixup\!"; then
+  exit 0
+fi
+if echo "$COMMIT_MSG" | grep -q "^squash\!"; then
+  exit 0
+fi
+
+# Check minimum length
+MSG_LENGTH=$(echo "$COMMIT_MSG" | head -1 | wc -c)
+if [ "$MSG_LENGTH" -lt 10 ]; then
+  echo "❌ Commit-besked er for kort (minimum 10 tegn)."
+  echo "   Forklar hvad der er ændret og hvorfor."
+  exit 1
+fi
+
+# Check for vague messages
+FIRST_LINE=$(echo "$COMMIT_MSG" | head -1 | tr '[:upper:]' '[:lower:]')
+VAGUE_WORDS="^fix$|^update$|^wip$|^misc$|^temp$|^changes$|^stuff$"
+FIRST_WORD=$(echo "$FIRST_LINE" | awk '{print $1}')
+
+if echo "$FIRST_WORD" | grep -qE "$VAGUE_WORDS"; then
+  echo "❌ Commit-besked er for vag: '$FIRST_WORD'"
+  echo "   Brug beskrivende beskeder der forklarer hvad og hvorfor."
+  exit 1
+fi
+
+exit 0

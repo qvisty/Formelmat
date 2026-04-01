@@ -1,0 +1,10 @@
+#!/bin/bash
+# Post-commit hook
+# Runs todo-github-sync if available
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SYNC_SCRIPT="$SCRIPT_DIR/todo-github-sync.py"
+
+if [ -f "$SYNC_SCRIPT" ] && command -v python3 &> /dev/null; then
+  python3 "$SYNC_SCRIPT" 2>/dev/null || true
+fi
