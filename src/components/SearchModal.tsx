@@ -55,10 +55,10 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[5vh] sm:pt-[15vh]">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} />
-      <div className="relative w-full max-w-lg mx-4 bg-white rounded-xl shadow-2xl border border-border overflow-hidden">
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
+      <div className="relative w-full max-w-lg mx-2 sm:mx-4 bg-white rounded-xl shadow-2xl border border-border overflow-hidden">
+        <div className="flex items-center gap-3 px-3 sm:px-4 py-3 border-b border-border">
           <svg
             className="h-5 w-5 text-muted flex-shrink-0"
             fill="none"
@@ -84,7 +84,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
             Esc
           </kbd>
         </div>
-        <div className="max-h-80 overflow-y-auto p-2">
+        <div className="max-h-[60vh] sm:max-h-80 overflow-y-auto p-2">
           {query && results.length === 0 && (
             <p className="py-8 text-center text-sm text-muted">
               Ingen resultater for &ldquo;{query}&rdquo;
@@ -94,7 +94,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
             <button
               key={i}
               onClick={() => navigateTo(result.href)}
-              className="w-full flex items-start gap-3 rounded-lg px-3 py-2.5 text-left hover:bg-surface transition-colors"
+              className="w-full flex items-start gap-3 rounded-lg px-3 py-3 sm:py-2.5 text-left hover:bg-surface active:bg-surface transition-colors"
             >
               <span className="mt-0.5 rounded bg-primary-light px-1.5 py-0.5 text-xs font-medium text-primary">
                 {typeLabels[result.type]}

@@ -76,10 +76,10 @@ export function TrigGraphs() {
           <button
             key={fn}
             onClick={() => setActiveFunc(fn)}
-            className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+            className={`rounded-lg px-4 py-2.5 sm:py-2 text-sm font-medium transition-colors flex-1 sm:flex-none ${
               activeFunc === fn
                 ? "text-white"
-                : "bg-surface text-muted border border-border hover:border-primary"
+                : "bg-surface text-muted border border-border hover:border-primary active:bg-primary-light"
             }`}
             style={
               activeFunc === fn

@@ -146,27 +146,27 @@ export function InteractiveTriangle() {
       </div>
 
       {/* Computed values */}
-      <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-lg bg-blue-50 border border-blue-200 p-3 text-center">
-          <p className="text-xs text-muted mb-1">sin({angle}°)</p>
-          <p className="text-lg font-bold text-blue-700">{sinVal.toFixed(4)}</p>
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="rounded-lg bg-blue-50 border border-blue-200 p-2 sm:p-3 text-center">
+          <p className="text-[10px] sm:text-xs text-muted mb-1">sin({angle}°)</p>
+          <p className="text-base sm:text-lg font-bold text-blue-700">{sinVal.toFixed(4)}</p>
         </div>
-        <div className="rounded-lg bg-green-50 border border-green-200 p-3 text-center">
-          <p className="text-xs text-muted mb-1">cos({angle}°)</p>
-          <p className="text-lg font-bold text-green-700">
+        <div className="rounded-lg bg-green-50 border border-green-200 p-2 sm:p-3 text-center">
+          <p className="text-[10px] sm:text-xs text-muted mb-1">cos({angle}°)</p>
+          <p className="text-base sm:text-lg font-bold text-green-700">
             {cosVal.toFixed(4)}
           </p>
         </div>
-        <div className="rounded-lg bg-amber-50 border border-amber-200 p-3 text-center">
-          <p className="text-xs text-muted mb-1">tan({angle}°)</p>
-          <p className="text-lg font-bold text-amber-700">
+        <div className="rounded-lg bg-amber-50 border border-amber-200 p-2 sm:p-3 text-center">
+          <p className="text-[10px] sm:text-xs text-muted mb-1">tan({angle}°)</p>
+          <p className="text-base sm:text-lg font-bold text-amber-700">
             {angle === 90 ? "∞" : tanVal.toFixed(4)}
           </p>
         </div>
       </div>
 
       {/* Formulas */}
-      <div className="rounded-lg bg-surface border border-border p-4 space-y-2 text-sm">
+      <div className="rounded-lg bg-surface border border-border p-3 sm:p-4 space-y-2 text-xs sm:text-sm overflow-x-auto">
         <p>
           <span className="text-blue-600 font-medium">sin({angle}°)</span> ={" "}
           <span className="text-red-500">modstående</span> /{" "}

@@ -180,16 +180,16 @@ export function UnitCircle() {
       </div>
 
       {/* Quick angle buttons */}
-      <div className="flex flex-wrap gap-2">
-        {[0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330, 360].map(
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+        {[0, 30, 45, 60, 90, 120, 150, 180, 270, 360].map(
           (a) => (
             <button
               key={a}
               onClick={() => setAngle(a)}
-              className={`rounded-md px-2.5 py-1 text-xs font-medium border transition-colors ${
+              className={`rounded-md px-2.5 py-1.5 sm:py-1 text-xs font-medium border transition-colors min-w-[3rem] ${
                 angle === a
                   ? "bg-primary text-white border-primary"
-                  : "bg-white text-muted border-border hover:border-primary"
+                  : "bg-white text-muted border-border hover:border-primary active:bg-primary-light"
               }`}
             >
               {a}°

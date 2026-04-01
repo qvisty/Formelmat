@@ -20,8 +20,8 @@ export function LinearFunctionDemo() {
   const toSvgY = (y: number) => mid - y * scale;
 
   return (
-    <div className="rounded-xl border border-border p-6 bg-surface">
-      <div className="flex flex-col sm:flex-row gap-6 items-start">
+    <div className="rounded-xl border border-border p-4 sm:p-6 bg-surface">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
         <svg
           viewBox={`0 0 ${width} ${height}`}
           className="w-full max-w-[300px] h-auto border border-border rounded-lg bg-white dark:bg-gray-900"
