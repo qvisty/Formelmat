@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Areal og omkreds – Formelmat",
@@ -165,6 +166,28 @@ export default function ArealOgOmkredsPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Tegn figurer og mål deres areal og omkreds direkte i GeoGebra.
+          Brug polygon-værktøjet og areal-måling.
+        </p>
+        <GeoGebraEmbed
+          appName="geometry"
+          commands={[
+            "A = (0, 0)",
+            "B = (4, 0)",
+            "C = (4, 3)",
+            "D = (0, 3)",
+            "poly1 = Polygon(A, B, C, D)",
+            'text1 = Text("Areal = " + Area(poly1), (1, 1.5))',
+            'text2 = Text("Omkreds = " + Perimeter(poly1), (1, 0.8))',
+          ]}
+          height={400}
+          label="Mål areal og omkreds – træk i hjørnerne"
+        />
       </section>
 
       <section>

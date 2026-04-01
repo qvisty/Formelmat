@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Flytninger og symmetri – Formelmat",
@@ -120,6 +121,21 @@ export default function FlytningerOgSymmetriPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Tegn figurer og prøv at spejle, dreje og parallelforskyde dem.
+          Brug værktøjslinjen til at vælge den ønskede transformation.
+        </p>
+        <GeoGebraEmbed
+          appName="geometry"
+          showToolBar={true}
+          showMenuBar={false}
+          height={500}
+          label="Åbent GeoGebra geometriværktøj – prøv flytninger"
+        />
       </section>
 
       <section>

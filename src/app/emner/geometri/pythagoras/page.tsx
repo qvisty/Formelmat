@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 // export const metadata = {
 //   title: "Pythagoras' sætning – Formelmat",
@@ -180,6 +181,35 @@ export default function PythagorasPage() {
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Beregner</h2>
         <PythagorasCalculator />
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Se Pythagoras&apos; sætning visuelt. Træk i hjørnerne og se, hvordan
+          arealerne af kvadraterne ændrer sig – de to små vil altid tilsammen
+          give det store.
+        </p>
+        <GeoGebraEmbed
+          appName="geometry"
+          commands={[
+            "A = (0, 0)",
+            "B = (4, 0)",
+            "C = (4, 3)",
+            "poly1 = Polygon(A, B, C)",
+            "a_seg = Segment(B, C)",
+            "b_seg = Segment(A, C)",
+            "c_seg = Segment(A, B)",
+            "sq_a = Polygon(B, C, 4)",
+            "sq_b = Polygon(A, C, 4)",
+            "sq_c = Polygon(A, B, 4)",
+            'text1 = Text("a² = " + round(Length(a_seg)^2, 2), (5.5, 1.5))',
+            'text2 = Text("b² = " + round(Length(b_seg)^2, 2), (1, 4))',
+            'text3 = Text("c² = " + round(Length(c_seg)^2, 2), (1, -2))',
+          ]}
+          height={500}
+          label="Pythagoras visuelt – træk i hjørnerne"
+        />
       </section>
 
       <section>

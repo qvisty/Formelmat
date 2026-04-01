@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InteractiveTriangle } from "@/components/InteractiveTriangle";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Trigonometri – Geometri – Formelmat",
@@ -155,6 +156,35 @@ export default function GeometriTrigonometriPage() {
           tangens ændrer sig.
         </p>
         <InteractiveTriangle />
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Byg din egen retvinklede trekant og undersøg sammenhængen mellem
+          sider og vinkler. Træk i punkterne for at ændre trekanten.
+        </p>
+        <GeoGebraEmbed
+          appName="geometry"
+          commands={[
+            "A = (0, 0)",
+            "B = (5, 0)",
+            "C = (5, 3)",
+            "Polygon(A, B, C)",
+            "a = Segment(B, C)",
+            "b = Segment(A, C)",
+            "c = Segment(A, B)",
+            'SetCaption(a, "modstående")',
+            'SetCaption(b, "hypotenuse")',
+            'SetCaption(c, "hosliggende")',
+            "SetLabelMode(a, 3)",
+            "SetLabelMode(b, 3)",
+            "SetLabelMode(c, 3)",
+            "α = Angle(B, A, C)",
+          ]}
+          height={450}
+          label="Retvinklet trekant – træk i A, B eller C"
+        />
       </section>
 
       <section>

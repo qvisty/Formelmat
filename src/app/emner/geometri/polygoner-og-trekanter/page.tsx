@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Polygoner og trekanter – Formelmat",
@@ -137,6 +138,19 @@ export default function PolygonerOgTrekanterPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Konstruér trekanter og polygoner. Mål vinkler og sider, og
+          undersøg trekantens linjer (højde, median, midtnormal).
+        </p>
+        <GeoGebraEmbed
+          appName="geometry"
+          height={450}
+          label="GeoGebra geometri – tegn og mål figurer"
+        />
       </section>
 
       <section>

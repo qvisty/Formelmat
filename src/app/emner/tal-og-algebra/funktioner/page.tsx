@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LinearFunctionDemo } from "@/components/LinearFunctionDemo";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Funktioner – Formelmat",
@@ -157,6 +158,25 @@ export default function FunktionerPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Tegn og sammenlign funktioner i GeoGebras grafregner. Prøv fx at
+          skrive <code className="bg-surface px-1 rounded text-sm">f(x) = x^2 - 2x + 1</code> eller{" "}
+          <code className="bg-surface px-1 rounded text-sm">g(x) = 2^x</code>.
+        </p>
+        <GeoGebraEmbed
+          appName="graphing"
+          showAlgebraInput={true}
+          showToolBar={true}
+          commands={[
+            "f(x) = x^2 - 2x - 3",
+          ]}
+          height={450}
+          label="GeoGebra grafregner – skriv dine egne funktioner"
+        />
       </section>
 
       <section>

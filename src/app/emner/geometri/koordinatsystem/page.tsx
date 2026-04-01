@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 
 export const metadata = {
   title: "Koordinatsystem – Formelmat",
@@ -145,6 +146,22 @@ export default function KoordinatsystemPage() {
             M = ((x₁ + x₂) / 2, (y₁ + y₂) / 2)
           </p>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Udforsk i GeoGebra</h2>
+        <p className="text-muted mb-4">
+          Tegn punkter, linjer og funktioner i koordinatsystemet. Prøv at
+          indtaste <code className="bg-surface px-1 rounded text-sm">y = 2x + 1</code> i
+          inputfeltet.
+        </p>
+        <GeoGebraEmbed
+          appName="graphing"
+          showAlgebraInput={true}
+          showToolBar={true}
+          height={500}
+          label="GeoGebra grafregner – skriv funktioner i feltet"
+        />
       </section>
 
       <section>
