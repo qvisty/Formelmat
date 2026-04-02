@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Formler og algebraiske udtryk – Formelmat",
@@ -29,8 +30,7 @@ export default function FormlerOgUdtrykPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Algebraiske udtryk indeholder <strong>variable</strong> (bogstaver) og
-        tal. Ved hjælp af regneregler kan man omskrive og forenkle udtryk.
+        Algebraiske udtryk er en slags matematisk sprog, hvor bogstaver st&aring;r for tal. Her l&aelig;rer du at samle, gange ud, s&aelig;tte i parentes og forenkle udtryk &ndash; det er n&oslash;glen til at l&oslash;se ligninger og forst&aring; formler.
       </p>
 
       <section className="mb-10">
@@ -153,6 +153,11 @@ export default function FormlerOgUdtrykPage() {
             <p className="math-formula">b = A / a</p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Udtryksforenkling" description="Skriv et algebraisk udtryk og se trin for trin, hvordan det forenkles. Øv dig med parenteser, kvadratsætninger og reducering." icon="✏️" type="visualizer" />
       </section>
 
       <section>

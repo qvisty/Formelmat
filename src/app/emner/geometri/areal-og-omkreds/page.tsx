@@ -30,9 +30,7 @@ export default function ArealOgOmkredsPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Areal</strong> er størrelsen af en figurs overflade, målt i
-        kvadratenheder. <strong>Omkreds</strong> er den samlede længde af
-        figurens kant.
+        Areal fortæller dig, hvor stor en flade er – fx hvor meget maling du skal bruge til en væg. Omkreds er længden hele vejen rundt om en figur. Her finder du formlerne til de vigtigste figurer.
       </p>
 
       <section className="mb-10">

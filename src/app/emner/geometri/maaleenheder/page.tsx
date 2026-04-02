@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Måleenheder – Formelmat",
@@ -29,8 +30,7 @@ export default function MaaleenhederPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Oversigt over de vigtigste måleenheder for længde, areal, rumfang og
-        masse samt formler for massefylde og fart.
+        Måleenheder bruger du hele tiden – meter, kilo, liter. Her finder du alle omregningerne mellem enheder for længde, areal, rumfang og masse, plus formlerne for massefylde og fart.
       </p>
 
       <section className="mb-10">
@@ -238,6 +238,11 @@ export default function MaaleenhederPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Enhedsomregner" description="Vælg en kategori (længde, areal, rumfang, masse), skriv et tal, og se det omregnet til alle andre enheder med det samme." icon="📏" type="converter" />
       </section>
 
       <section>

@@ -134,9 +134,7 @@ export default function PythagorasPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Pythagoras&apos; sætning</strong> gælder i alle retvinklede
-        trekanter. Den beskriver sammenhængen mellem de tre sider: summen af
-        kateternes kvadrater er lig med kvadratet på hypotenusen.
+        Pythagoras&apos; sætning er en af de mest berømte formler i matematik. Den fortæller dig, at i en retvinklet trekant er a² + b² = c². Med den kan du altid finde den tredje side, hvis du kender de to andre.
       </p>
 
       <section className="mb-10">

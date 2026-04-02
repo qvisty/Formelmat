@@ -28,10 +28,7 @@ export default function GeometriPage() {
         <span>📐</span> Geometri og måling
       </h1>
       <p className="text-lg text-muted mb-8">
-        Geometri handler om figurer, former og deres egenskaber. Her finder du
-        formler og begreber til linjer, vinkler, polygoner, cirkler, rumlige
-        figurer, areal, rumfang og måleenheder &ndash; alt hvad du skal bruge i
-        matematik.
+        Geometri handler om figurer, former og mål. Her finder du alt om trekanter, cirkler, rumlige figurer, areal, rumfang og meget mere – med interaktive værktøjer, du kan prøve direkte.
       </p>
 
       <section className="mb-10">

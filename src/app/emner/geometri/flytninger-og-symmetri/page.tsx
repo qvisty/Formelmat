@@ -30,9 +30,7 @@ export default function FlytningerOgSymmetriPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        En <strong>flytning</strong> (isometri) er en transformation, der
-        bevarer afstande og vinkler. De tre grundlæggende flytninger er
-        spejling, drejning og parallelforskydning.
+        Flytninger er, når du flytter en figur uden at ændre dens form – du kan spejle den, dreje den eller skubbe den. Symmetri handler om, hvornår en figur ser ens ud, selvom den er blevet spejlet eller drejet.
       </p>
 
       <section className="mb-10">

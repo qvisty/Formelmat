@@ -28,8 +28,7 @@ export default function TalOgAlgebraPage() {
         <span>🔢</span> Tal og algebra
       </h1>
       <p className="text-lg text-muted mb-8">
-        Tal og algebra dækker alt fra de grundlæggende taltyper og regnearter til
-        ligninger, funktioner og økonomi. Det er fundamentet for al matematik.
+        Alt i matematik bygger på tal og algebra. Her finder du alt fra de grundlæggende regnearter til funktioner og økonomi – med formler, forklaringer og eksempler.
       </p>
 
       <section className="mb-10">

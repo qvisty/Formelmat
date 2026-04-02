@@ -30,9 +30,7 @@ export default function KoordinatsystemPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Et <strong>koordinatsystem</strong> bruges til at angive punkters
-        placering i planen. Det består af to tallinjer (akser), der skærer
-        hinanden vinkelret i <strong>origo</strong> (0, 0).
+        Koordinatsystemet er som et landkort for matematik – du kan angive præcis, hvor et punkt er ved at give det to tal (x, y). Her lærer du også om rette linjer og deres hældning.
       </p>
 
       <section className="mb-10">

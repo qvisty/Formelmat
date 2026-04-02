@@ -9,9 +9,7 @@ export default function Home() {
           Matematiske formler og fagord
         </h1>
         <p className="text-lg text-muted max-w-2xl">
-          Interaktiv udgave af formelsamlingen til matematik i 7.-10. klasse og
-          folkeskolens prøver. Slå op i formler, fagord og forklaringer – og
-          arbejd med dynamiske visualiseringer.
+          Din digitale formelsamling til matematik i 7.-10. klasse. Slå hurtigt op i formler og fagord, og udforsk matematikken med interaktive visualiseringer – det hele samlet ét sted.
         </p>
         <p className="text-sm text-muted mt-2">
           Kilde: Børne- og Undervisningsministeriet, 2. udgave 2017

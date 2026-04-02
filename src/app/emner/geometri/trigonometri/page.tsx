@@ -31,9 +31,7 @@ export default function GeometriTrigonometriPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Trigonometri handler om sammenhængen mellem vinkler og sider i
-        trekanter. I den <strong>retvinklede trekant</strong> defineres de tre
-        trigonometriske funktioner: sinus, cosinus og tangens.
+        Trigonometri handler om sammenhængen mellem vinkler og sider i trekanter. Med sinus, cosinus og tangens kan du beregne sider og vinkler, du ikke kender – prøv det selv herunder.
       </p>
 
       <section className="mb-10">

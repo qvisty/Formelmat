@@ -28,10 +28,7 @@ export default function StatistikPage() {
         <span>📊</span> Statistik og sandsynlighed
       </h1>
       <p className="text-lg text-muted mb-8">
-        Statistik handler om at indsamle, organisere og analysere data for at
-        drage konklusioner. Sandsynlighedsregning handler om at beregne, hvor
-        sandsynligt det er, at bestemte hændelser indtræffer. Tilsammen giver de
-        os redskaber til at forstå og beskrive verden med tal.
+        Statistik og sandsynlighed giver dig redskaber til at forstå data og beregne chancer. Her lærer du at organisere tal, beregne gennemsnit og sandsynligheder – og vise det hele med diagrammer.
       </p>
 
       <section className="mb-10">

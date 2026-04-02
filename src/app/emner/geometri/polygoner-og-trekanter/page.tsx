@@ -30,9 +30,7 @@ export default function PolygonerOgTrekanterPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        En <strong>polygon</strong> (mangekant) er en lukket figur med rette
-        sider. Trekanter er de simpleste polygoner og har mange vigtige
-        egenskaber.
+        Polygoner er figurer med rette sider – trekanter, firkanter, femkanter og så videre. Trekanter er de simpleste, men de har masser af spændende egenskaber. Prøv at bygge dine egne i GeoGebra herunder.
       </p>
 
       <section className="mb-10">

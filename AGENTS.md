@@ -147,6 +147,14 @@ export const metadata = {
 // Beregninger i React state
 ```
 
+### Regler for nyt indhold (udvidelser, gymnasie m.m.)
+
+Når der tilføjes nye emner, sider eller uddannelsesniveauer:
+
+1. **Interaktive mock-elementer:** Alle indholdssider SKAL have mindst ét interaktivt element eller en `InteractivePlaceholder`-komponent, der markerer, hvad der skal bygges. Ingen side må være 100% statisk tekst.
+
+2. **Elevvenlige tekster:** Alt brugervendt tekst skal skrives direkte til eleven i "du"-form. Brug et varmt, opmuntrende sprog. Forklar hvorfor emnet er relevant for eleven. Undgå akademisk/distanceret tone. Maks 2-3 sætninger i introduktionen.
+
 ---
 
 ## 9. DEFINITION OF DONE

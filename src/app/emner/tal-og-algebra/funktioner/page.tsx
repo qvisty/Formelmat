@@ -29,9 +29,7 @@ export default function FunktionerPage() {
       <h1 className="text-3xl font-bold text-foreground mb-4">Funktioner</h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        En <strong>funktion</strong> er en sammenhæng mellem variable, hvor der
-        til hver x-værdi kun hører én y-værdi. Funktioner kan beskrives med
-        forskrift, graf, tabel eller ord.
+        En funktion er en regel, der til hvert x-tal giver pr&aelig;cis &eacute;t y-tal. Det lyder m&aring;ske abstrakt, men funktioner beskriver fx sammenh&aelig;ngen mellem tid og afstand, eller antal varer og pris. Her kan du tegne og udforske funktioner.
       </p>
 
       <section className="mb-10">

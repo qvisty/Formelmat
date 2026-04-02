@@ -30,10 +30,7 @@ export default function SandsynlighedPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Sandsynlighed</strong> er et tal mellem 0 og 1, der angiver,
-        hvor sandsynligt det er, at en bestemt hændelse indtræffer. En
-        sandsynlighed på 0 betyder, at hændelsen er umulig, og 1 betyder, at
-        den er sikker.
+        Hvor stor er chancen for at slå en sekser? Eller at det regner i morgen? Sandsynlighed handler om at sætte tal på, hvor sandsynligt noget er – fra 0 (umuligt) til 1 (helt sikkert).
       </p>
 
       {/* Grundbegreber */}
@@ -299,6 +296,12 @@ export default function SandsynlighedPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Prøv selv */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Sandsynlighedssimulator" description="Kast virtuelle terninger og mønter, og se hvordan den eksperimentelle sandsynlighed nærmer sig den teoretiske, jo flere kast du laver." icon="🎲" type="simulator" />
       </section>
 
       {/* Se også */}

@@ -30,9 +30,7 @@ export default function RumfangPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Rumfang</strong> (volumen) er den mængde plads, en rumlig
-        figur fylder. <strong>Overfladeareal</strong> er det samlede areal
-        af figurens ydre flader.
+        Rumfang fortæller dig, hvor meget plads noget fylder – fx hvor meget vand der kan være i en flaske, eller hvor meget jord der skal i et hul. Overfladeareal er, hvor meget materiale du skal bruge til at dække overfladen.
       </p>
 
       <section className="mb-10">
@@ -155,6 +153,11 @@ export default function RumfangPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Rumfangsberegner" description="Vælg en figur, indtast mål, og se rumfang og overfladeareal beregnet med det samme. Sammenlign forskellige figurer med hinanden." icon="📦" type="calculator" />
       </section>
 
       <section>

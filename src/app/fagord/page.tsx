@@ -39,8 +39,7 @@ export default function FagordPage() {
         <span>📖</span> Fagord
       </h1>
       <p className="text-lg text-muted mb-4">
-        Opslagsværk over matematiske fagord og begreber. {glossary.length} opslag
-        fra formelsamlingen.
+        Her kan du slå alle matematiske fagord op. Brug bogstavnavigationen for at finde det ord, du leder efter – eller brug søgefunktionen (Ctrl+K).
       </p>
 
       {/* Letter navigation */}
