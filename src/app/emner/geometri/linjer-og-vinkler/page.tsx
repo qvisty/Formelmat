@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Linjer og vinkler – Formelmat",
@@ -29,9 +30,7 @@ export default function LinjerOgVinklerPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Linjer og vinkler er grundlæggende byggesten i geometrien. Her
-        gennemgås parallelle linjer, midtnormaler, vinkelhalveringslinjer samt
-        de vigtigste vinkelregler.
+        Linjer og vinkler er byggestenene i al geometri. Når du ved, hvordan vinkler opfører sig – fx at topvinkler altid er lige store – kan du løse mange opgaver meget hurtigere.
       </p>
 
       <section className="mb-10">
@@ -121,6 +120,11 @@ export default function LinjerOgVinklerPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Vinkel-udforskeren" description="Træk i to linjer, der skærer hinanden, og se hvordan nabovinkler, topvinkler og ensliggende vinkler ændrer sig. Alle regler opdateres live." icon="📐" type="explorer" />
       </section>
 
       <section>

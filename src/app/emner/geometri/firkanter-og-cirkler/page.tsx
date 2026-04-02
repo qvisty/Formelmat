@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Firkanter og cirkler – Formelmat",
@@ -29,9 +30,7 @@ export default function FirkanterOgCirklerPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Firkanter og cirkler er blandt de mest anvendte geometriske figurer.
-        Her gennemgås egenskaberne for de vigtigste firkanttyper samt cirklens
-        centrale begreber.
+        Firkanter og cirkler er overalt – vinduer, hjul, skærme, boldbaner. Her lærer du at kende forskel på kvadrater, rektangler, parallelogrammer og andre firkanter, plus alt om cirklen.
       </p>
 
       <section className="mb-10">
@@ -138,6 +137,11 @@ export default function FirkanterOgCirklerPage() {
             <p className="math-formula text-lg">A = &pi; &middot; r²</p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Firkant-udforskeren" description="Vælg en firkanttype og træk i hjørnerne. Se hvordan areal, omkreds, diagonaler og vinkler ændrer sig. Sammenlign de forskellige typer." icon="⬜" type="explorer" />
       </section>
 
       <section>

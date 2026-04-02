@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Diagrammer – Formelmat",
@@ -29,9 +30,7 @@ export default function DiagrammerPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Diagrammer bruges til at vise data grafisk, så man hurtigt kan se
-        mønstre, fordelinger og sammenhænge. Valget af diagramtype afhænger af
-        datatypen og hvad man vil fremhæve.
+        Diagrammer gør tal til billeder – det bliver meget nemmere at se mønstre og forskelle, når du tegner data op. Her lærer du om de vigtigste diagramtyper, og hvornår du skal bruge hvilken.
       </p>
 
       {/* Pindediagram */}
@@ -237,6 +236,12 @@ export default function DiagrammerPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      {/* Prøv selv */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Diagram-værksted" description="Indtast data og skift mellem stolpediagram, cirkeldiagram, boksplot og punktdiagram. Se hvordan de samme tal ser ud på forskellige måder." icon="📈" type="visualizer" />
       </section>
 
       {/* Se også */}

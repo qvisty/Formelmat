@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Datasæt og tabeller – Formelmat",
@@ -29,11 +30,7 @@ export default function DatasaetPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Når man laver en statistisk undersøgelse, indsamler man{" "}
-        <strong>data</strong>. Hver oplysning kaldes en{" "}
-        <strong>observation</strong>, og samlingen af alle observationer kaldes et{" "}
-        <strong>datasæt</strong>. Data kan organiseres i tabeller for at give
-        overblik.
+        Når du laver en undersøgelse – fx spørger dine klassekammerater om deres yndlingsfarve – samler du data. Her lærer du at organisere dine data i tabeller, så du kan se mønstre og drage konklusioner.
       </p>
 
       {/* Hyppighed og frekvens */}
@@ -208,6 +205,12 @@ export default function DatasaetPage() {
           Ved grupperede data mister man den præcise information om hver enkelt
           observation, men man får et bedre overblik over fordelingen.
         </p>
+      </section>
+
+      {/* Prøv selv */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Frekvenstabell-bygger" description="Indtast dine egne data, og se dem automatisk organiseret i en tabel med hyppighed, summeret hyppighed og frekvens." icon="📋" type="calculator" />
       </section>
 
       {/* Se også */}

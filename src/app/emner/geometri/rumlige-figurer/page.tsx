@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Rumlige figurer – Formelmat",
@@ -29,9 +30,7 @@ export default function RumligeFigurerPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Rumlige figurer (3D-figurer) har længde, bredde og højde. Her
-        gennemgås de vigtigste typer: polyedre, prismer, cylindere, kegler,
-        kugler og pyramider.
+        Rumlige figurer har tre dimensioner – længde, bredde og højde. Du kender dem fra hverdagen: en dåse er en cylinder, en bold er en kugle, og en terning er en kube.
       </p>
 
       <section className="mb-10">
@@ -155,6 +154,11 @@ export default function RumligeFigurerPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="3D-figur-visning" description="Roter og zoom ind på rumlige figurer. Se hjørner, kanter og sideflader, og forstå forskellen mellem de forskellige typer." icon="🎲" type="visualizer" />
       </section>
 
       <section>

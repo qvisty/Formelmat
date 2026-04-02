@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Procent og promille – Formelmat",
@@ -29,9 +30,7 @@ export default function ProcentOgPromillePage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Procent</strong> betyder hundrededele og <strong>promille</strong>{" "}
-        betyder tusindedele. Disse begreber bruges overalt i hverdagen &ndash;
-        fra rabatter til renter.
+        Du bruger procent hele tiden &ndash; n&aring;r du handler p&aring; udsalg, ser valgresultater eller l&aelig;ser om renter. Her l&aelig;rer du at regne med procent og promille, s&aring; du altid kan finde ud af, hvad tingene egentlig koster.
       </p>
 
       <section className="mb-10">
@@ -169,6 +168,11 @@ export default function ProcentOgPromillePage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Procentberegner" description="Indtast et tal og en procentsats, og se resultatet med det samme. Prøv også at beregne procentvis stigning og fald." icon="💰" type="calculator" />
       </section>
 
       <section>

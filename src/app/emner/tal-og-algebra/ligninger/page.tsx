@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Ligninger – Formelmat",
@@ -27,9 +28,7 @@ export default function LigningerPage() {
       <h1 className="text-3xl font-bold text-foreground mb-4">Ligninger</h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        En <strong>ligning</strong> er to matematiske udtryk med et lighedstegn
-        imellem. Ligningen løses ved at finde talværdier for de ubekendte, som
-        gør udsagnet sandt.
+        En ligning er som en v&aelig;gt i balance &ndash; det, der st&aring;r p&aring; den ene side af lighedstegnet, skal v&aelig;re lige s&aring; meget v&aelig;rd som den anden side. Her l&aelig;rer du at finde den ubekendte (ofte x) ved at holde balancen.
       </p>
 
       <section className="mb-10">
@@ -166,6 +165,11 @@ export default function LigningerPage() {
             <p className="math-formula">x &lt; &minus;3</p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Ligningsløser med vægt" description="Se ligningen som en balance. Tilføj eller fjern fra begge sider og se, hvordan x isoleres trin for trin." icon="⚖️" type="visualizer" />
       </section>
 
       <section>

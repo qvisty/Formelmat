@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Ligedannethed – Formelmat",
@@ -29,9 +30,7 @@ export default function LigedannethedPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Kongruens og ligedannethed handler om, hvornår figurer har samme form
-        og/eller størrelse. Disse begreber bruges bl.a. til at beregne
-        ukendte sidelængder i trekanter.
+        To figurer er ligedannede, hvis de har præcis samme form – den ene er bare en forstørrelse eller formindskelse af den anden. Det er fx det, der sker, når du zoomer ind på et kort.
       </p>
 
       <section className="mb-10">
@@ -98,6 +97,11 @@ export default function LigedannethedPage() {
           Hvis man kender tre sider i den ene trekant og én side i den anden,
           kan man beregne de resterende sider.
         </p>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Målforhold-visualisering" description="Vælg et målforhold og se, hvordan en figur ændrer størrelse. Se samtidig, hvordan længde-, areal- og rumfangsforholdet hænger sammen." icon="🔍" type="visualizer" />
       </section>
 
       <section>

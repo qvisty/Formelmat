@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Deskriptorer – Formelmat",
@@ -29,9 +30,7 @@ export default function DeskriptorerPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        <strong>Deskriptorer</strong> er nøgletal, der beskriver et datasæt med
-        enkelte værdier. De giver et hurtigt overblik over data uden at man
-        behøver se alle observationer.
+        Deskriptorer er nøgletal, der giver dig et hurtigt overblik over et datasæt – fx gennemsnittet, medianen og variationsbredden. I stedet for at kigge på alle tallene, kan du beskrive dem med få vigtige værdier.
       </p>
 
       {/* Eksempel-datasæt */}
@@ -215,6 +214,12 @@ export default function DeskriptorerPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      {/* Prøv selv */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Deskriptor-beregner" description="Skriv dine tal, og se typetal, middeltal, median, kvartilsæt og variationsbredde beregnet med det samme. Inkl. boksplot." icon="📊" type="calculator" />
       </section>
 
       {/* Se også */}

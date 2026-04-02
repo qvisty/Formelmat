@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Potenser og rødder – Formelmat",
@@ -29,9 +30,7 @@ export default function PotensOgRoedderPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        En <strong>potens</strong> er et tal opløftet i en eksponent. Rødder er
-        den omvendte operation. Potensreglerne gør det lettere at regne med
-        store og små tal.
+        Potenser er en smart m&aring;de at skrive tal, der ganges med sig selv mange gange. R&oslash;dder g&oslash;r det modsatte. Du bruger dem fx til at regne med meget store eller meget sm&aring; tal &ndash; og de dukker op overalt i formler.
       </p>
 
       <section className="mb-10">
@@ -163,6 +162,11 @@ export default function PotensOgRoedderPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Potens- og rodberegner" description="Skriv et tal og en eksponent, og se udregningen trin for trin. Fx 2⁵ = 2 × 2 × 2 × 2 × 2 = 32." icon="📊" type="calculator" />
       </section>
 
       <section>

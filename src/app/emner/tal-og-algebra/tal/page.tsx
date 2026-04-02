@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Tal – Formelmat",
@@ -27,8 +28,7 @@ export default function TalPage() {
       <h1 className="text-3xl font-bold text-foreground mb-4">Tal</h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        I matematik arbejder vi med forskellige typer af tal. Tallene kan ordnes
-        i et hierarki, hvor hver type indeholder den forrige.
+        Her l&aelig;rer du om de forskellige typer tal, du m&oslash;der i matematik &ndash; fra de naturlige t&aelig;lletal til de mystiske irrationale tal som &pi;. N&aring;r du forst&aring;r taltyper, bliver det meget nemmere at vide, hvad du kan g&oslash;re med dem.
       </p>
 
       <section className="mb-10">
@@ -173,6 +173,11 @@ export default function TalPage() {
           Tallinjen viser alle reelle tal. &radic;2 og &pi; er eksempler på
           irrationale tal placeret mellem de hele tal.
         </p>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Interaktiv tallinje" description="Træk tal rundt på tallinjen og se, hvor de hører hjemme. Find √2 og π mellem de rationale tal." icon="🔢" type="visualizer" />
       </section>
 
       <section>

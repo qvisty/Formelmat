@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Økonomi – Formelmat",
@@ -27,9 +28,7 @@ export default function OekonomiPage() {
       <h1 className="text-3xl font-bold text-foreground mb-4">Økonomi</h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        Matematiske modeller bruges i økonomi til at beregne renter, lån og
-        opsparing. Den vigtigste formel er formlen for <strong>sammensat
-        rente</strong>.
+        Matematik i &oslash;konomi handler om penge &ndash; opsparing, l&aring;n og renter. Med formlen for sammensat rente kan du fx beregne, hvor meget dine penge vokser over tid, eller hvad et l&aring;n reelt koster dig.
       </p>
 
       <section className="mb-10">
@@ -184,6 +183,11 @@ export default function OekonomiPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Renteberegner" description="Indtast et startbeløb, en rentesats og antal år – og se hvordan din opsparing vokser år for år. Sammenlign forskellige rentesatser." icon="🏦" type="calculator" />
       </section>
 
       <section>

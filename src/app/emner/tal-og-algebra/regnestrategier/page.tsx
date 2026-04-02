@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 
 export const metadata = {
   title: "Regnestrategier – Formelmat",
@@ -29,9 +30,7 @@ export default function RegnestrategierPage() {
       </h1>
 
       <p className="text-muted mb-6 max-w-2xl">
-        De fire regningsarter er grundlaget for al regning. Det er vigtigt at
-        kende reglerne for rækkefølge (hierarki) og reglerne for negative tal
-        og brøker.
+        De fire regningsarter &ndash; addition, subtraktion, multiplikation og division &ndash; er grundlaget for al matematik. Her finder du reglerne for, i hvilken r&aelig;kkef&oslash;lge du skal regne, og hvordan du regner med negative tal og br&oslash;ker.
       </p>
 
       <section className="mb-10">
@@ -218,6 +217,11 @@ export default function RegnestrategierPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
+        <InteractivePlaceholder title="Regnehierarki-visualisering" description="Indtast et regneudtryk og se trin for trin, hvordan det udregnes i den rigtige rækkefølge. Parenteser først, så potenser, så gange/dividere, til sidst plus/minus." icon="🧮" type="visualizer" />
       </section>
 
       <section>
