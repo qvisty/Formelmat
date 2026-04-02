@@ -1,7 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git status*)",
+      "Bash(git status)",
       "Bash(git diff*)",
       "Bash(git log*)",
       "Bash(git add*)",
@@ -13,13 +13,27 @@
       "Bash(npm test*)",
       "Bash(npm run lint*)",
       "Bash(npm run build*)",
-      "Bash(npm install*)",
+      "Bash(npm install)",
+      "Bash(python3 .claude/hooks/todo-github-sync.py*)",
       "Bash(bash sync.sh*)"
     ],
     "deny": [
       "Bash(git push --force*)",
       "Bash(git reset --hard*)",
       "Bash(rm -rf*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'git commit'; then python3 .claude/hooks/todo-github-sync.py 2>/dev/null || true; fi"
+          }
+        ]
+      }
     ]
   }
 }

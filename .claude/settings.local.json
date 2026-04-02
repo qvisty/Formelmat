@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:qvisty.github.io)",
+      "Bash(curl -s https://api.github.com/repos/qvisty/mit-claude-setup/contents/)",
+      "Bash(python -c \"import json,sys; [print\\(f[''''name''''], f[''''download_url'''']\\) for f in json.load\\(sys.stdin\\) if isinstance\\(f, dict\\)]\")",
+      "Bash(curl:*)",
+      "Bash(cp \".claude/hooks/commit-msg\" \".git/hooks/commit-msg\")",
+      "Bash(chmod +x \".git/hooks/commit-msg\")",
+      "Bash(cp \".claude/hooks/post-commit\" \".git/hooks/post-commit\")",
+      "Bash(chmod +x \".git/hooks/post-commit\")",
+      "Bash(gh repo:*)",
+      "Bash(cd:*)",
+      "Bash(npx next:*)",
+      "Bash(node_modules/.bin/next build:*)",
+      "Bash(dir \"C:\\\\Users\\\\jesp122a\\\\Documents\\\\GitHub\\\\Formelmat\\\\node_modules\\\\.bin\")"
+    ]
+  }
+}

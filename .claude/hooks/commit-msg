@@ -1,39 +1,49 @@
-#!/bin/bash
-# Commit message validation hook
-# Ensures commit messages are descriptive
+#!/usr/bin/env bash
+# Git commit-msg hook
+# Validerer at commit-beskeder er menneskelig læselige
+# Installer: cp .claude/hooks/commit-msg .git/hooks/commit-msg && chmod +x .git/hooks/commit-msg
 
-COMMIT_MSG_FILE=$1
-COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+MSG_FILE="$1"
+MSG=$(cat "$MSG_FILE")
 
-# Skip merge commits
-if echo "$COMMIT_MSG" | grep -q "^Merge"; then
+# Spring merge commits over
+if echo "$MSG" | grep -qE '^Merge (branch|pull request)'; then
   exit 0
 fi
 
-# Skip fixup/squash commits
-if echo "$COMMIT_MSG" | grep -q "^fixup\!"; then
-  exit 0
-fi
-if echo "$COMMIT_MSG" | grep -q "^squash\!"; then
+# Spring fixup/squash commits over
+if echo "$MSG" | grep -qE '^(fixup|squash)!'; then
   exit 0
 fi
 
-# Check minimum length
-MSG_LENGTH=$(echo "$COMMIT_MSG" | head -1 | wc -c)
-if [ "$MSG_LENGTH" -lt 10 ]; then
-  echo "❌ Commit-besked er for kort (minimum 10 tegn)."
-  echo "   Forklar hvad der er ændret og hvorfor."
+# Tjek minimum længde (mindst 10 tegn)
+FIRST_LINE=$(echo "$MSG" | head -1)
+LENGTH=${#FIRST_LINE}
+
+if [ "$LENGTH" -lt 10 ]; then
+  echo "" >&2
+  echo "❌ Commit-besked for kort (${LENGTH} tegn)." >&2
+  echo "" >&2
+  echo "Skriv en forklarende besked, f.eks.:" >&2
+  echo "  feat: tilføj login med Google OAuth" >&2
+  echo "  fix: ret crash når kurven er tom" >&2
+  echo "  refactor: opdel stor komponent i tre dele" >&2
+  echo "" >&2
   exit 1
 fi
 
-# Check for vague messages
-FIRST_LINE=$(echo "$COMMIT_MSG" | head -1 | tr '[:upper:]' '[:lower:]')
-VAGUE_WORDS="^fix$|^update$|^wip$|^misc$|^temp$|^changes$|^stuff$"
-FIRST_WORD=$(echo "$FIRST_LINE" | awk '{print $1}')
+# Advar mod vage beskeder
+VAGUE_PATTERNS="^(fix|update|changes|wip|misc|stuff|test|asdf|temp|tmp|quick fix|minor)$"
+LOWER=$(echo "$FIRST_LINE" | tr '[:upper:]' '[:lower:]' | sed 's/^[a-z]*: //')
 
-if echo "$FIRST_WORD" | grep -qE "$VAGUE_WORDS"; then
-  echo "❌ Commit-besked er for vag: '$FIRST_WORD'"
-  echo "   Brug beskrivende beskeder der forklarer hvad og hvorfor."
+if echo "$LOWER" | grep -qiE "$VAGUE_PATTERNS"; then
+  echo "" >&2
+  echo "⚠️ Commit-besked er for vag: \"$FIRST_LINE\"" >&2
+  echo "" >&2
+  echo "Vær mere specifik. Hvad ændrede du og hvorfor?" >&2
+  echo "  feat: tilføj login med Google OAuth" >&2
+  echo "  fix: ret crash når kurven er tom" >&2
+  echo "" >&2
   exit 1
 fi
 

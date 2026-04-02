@@ -1,139 +1,194 @@
 #!/usr/bin/env python3
 """
-TODO-GitHub Issue Synchronization
+todo-github-sync.py
+Syncer TODO-kommentarer i koden til GitHub Issues automatisk.
+Tildeler nye issues til den aktive milestone (åben, med "Fase" i titlen).
 
-Scans Git-tracked files for TODO(context): description patterns,
-creates GitHub issues for new TODOs, and closes issues for removed TODOs.
+Brug:
+  python3 .claude/hooks/todo-github-sync.py
 
-Requires: gh CLI installed and authenticated
+Kræver:
+  - gh CLI installeret og autentificeret
+  - Git repository med GitHub remote
 """
-
-import subprocess
 import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
+from pathlib import Path
 
-CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "todo-issues.json")
 LABEL = "todo-sync"
-BLACKLIST_DIRS = {".git", ".next", "node_modules", ".claude", ".planning", "public"}
-TODO_PATTERN = re.compile(r"TODO\(([^)]+)\):\s*(.+)")
+LABEL_COLOR = "0075ca"
+CACHE_FILE = Path(".claude/todo-issues.json")
+TODO_PATTERN = re.compile(r'TODO(?:\([^)]+\))?:\s*(.+)')
+
+SKIP_PATHS = [
+    ".claude/", "CLAUDE.md", "AGENTS.md", "RALPH.md",
+    "node_modules", ".git", "todo-github-sync.py",
+    "sync.sh", "install.sh",
+]
 
 
-def run(cmd):
-    result = subprocess.run(cmd, capture_output=True, text=True, shell=True)
-    return result.stdout.strip(), result.returncode
+def run(cmd, check=True):
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if check and result.returncode != 0:
+        raise RuntimeError(f"Kommando fejlede: {cmd}\n{result.stderr}")
+    return result.stdout.strip()
 
 
-def get_tracked_files():
-    out, _ = run("git ls-files")
-    files = []
-    for f in out.split("\n"):
-        if not f:
-            continue
-        parts = f.split("/")
-        if any(d in BLACKLIST_DIRS for d in parts):
-            continue
-        files.append(f)
-    return files
+def check_prereqs():
+    """Returnerer repo-navn eller None hvis ikke klar."""
+    try:
+        run("gh --version")
+        repo = run("gh repo view --json nameWithOwner -q .nameWithOwner")
+        return repo
+    except Exception:
+        return None
 
 
-def find_todos():
+def get_active_milestone(repo):
+    """Finder den aktive milestone (seneste åbne). Returnerer nummer eller None."""
+    try:
+        result = run(f"gh api repos/{repo}/milestones?state=open", check=False)
+        milestones = json.loads(result) if result else []
+    except Exception:
+        return None
+
+    if not milestones:
+        return None
+
+    # Returnér den senest oprettede åbne milestone
+    return max(milestones, key=lambda m: m.get("number", 0)).get("number")
+
+
+def scan_todos():
+    """Finder alle TODOs i tracked filer. Returnerer {hash: {file, line, text}}."""
     todos = {}
-    for filepath in get_tracked_files():
-        if not os.path.isfile(filepath):
+    try:
+        files = run("git ls-files").splitlines()
+    except Exception:
+        return todos
+
+    for filepath in files:
+        if any(p in filepath for p in SKIP_PATHS):
             continue
         try:
-            with open(filepath, "r", encoding="utf-8", errors="ignore") as fh:
-                for line_no, line in enumerate(fh, 1):
-                    match = TODO_PATTERN.search(line)
-                    if match:
-                        context = match.group(1).strip()
-                        description = match.group(2).strip()
-                        hash_key = hashlib.md5(f"{filepath}:{description}".encode()).hexdigest()
-                        todos[hash_key] = {
-                            "file": filepath,
-                            "line": line_no,
-                            "context": context,
-                            "description": description,
-                        }
-        except (IOError, UnicodeDecodeError):
-            continue
+            with open(filepath, encoding="utf-8", errors="ignore") as f:
+                for lineno, line in enumerate(f, 1):
+                    m = TODO_PATTERN.search(line)
+                    if m:
+                        text = m.group(1).strip()[:200]
+                        # Hash på fil + tekst (ikke linje) så flytning ikke laver nyt issue
+                        key = hashlib.md5(f"{filepath}:{text}".encode()).hexdigest()[:12]
+                        todos[key] = {"file": filepath, "line": lineno, "text": text}
+        except Exception:
+            pass
     return todos
 
 
 def load_cache():
-    if os.path.exists(CACHE_FILE):
-        with open(CACHE_FILE, "r") as f:
-            return json.load(f)
+    if CACHE_FILE.exists():
+        try:
+            return json.loads(CACHE_FILE.read_text())
+        except Exception:
+            pass
     return {}
 
 
 def save_cache(cache):
-    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
-    with open(CACHE_FILE, "w") as f:
-        json.dump(cache, f, indent=2)
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CACHE_FILE.write_text(json.dumps(cache, indent=2, ensure_ascii=False))
 
 
 def ensure_label():
-    run(f'gh label create "{LABEL}" --description "Auto-synced from TODO comments" --color "0E8A16" 2>/dev/null')
+    run(
+        f'gh label create "{LABEL}" --color "{LABEL_COLOR}" '
+        f'--description "Auto-synced from code TODOs" 2>/dev/null || true',
+        check=False,
+    )
 
 
-def get_active_milestone():
-    out, rc = run('gh api repos/:owner/:repo/milestones --jq ".[0].title"')
-    return out if rc == 0 and out else None
+def create_issue(todo, milestone_num=None):
+    body = (
+        "**Auto-oprettet fra kode-TODO**\n\n"
+        f"Fil: `{todo['file']}:{todo['line']}`\n\n"
+        "Dette issue lukkes automatisk når TODO'en fjernes fra koden.\n\n"
+        "---\n"
+        "*Synket af [qvisty/mit-claude-setup](https://github.com/qvisty/mit-claude-setup)*"
+    )
+    title = todo["text"]
+    cmd = (
+        f"gh issue create "
+        f"--title {json.dumps(title)} "
+        f"--body {json.dumps(body)} "
+        f"--label {json.dumps(LABEL)} "
+    )
+    if milestone_num:
+        cmd += f"--milestone {milestone_num} "
+    cmd += "--json number -q .number"
+
+    result = run(cmd, check=False)
+    return int(result) if result.isdigit() else None
 
 
-def create_issue(todo, milestone=None):
-    title = f"TODO({todo['context']}): {todo['description']}"
-    body = f"**File:** `{todo['file']}` (line {todo['line']})\n\n{todo['description']}\n\n*Auto-created from TODO comment*"
-    cmd = f'gh issue create --title "{title}" --body "{body}" --label "{LABEL}"'
-    if milestone:
-        cmd += f' --milestone "{milestone}"'
-    out, rc = run(cmd)
-    if rc == 0:
-        # Extract issue number from URL
-        parts = out.split("/")
-        return parts[-1] if parts else None
-    return None
-
-
-def close_issue(issue_number):
-    run(f"gh issue close {issue_number}")
+def close_issue(num):
+    run(
+        f"gh issue close {num} "
+        f"--comment \"Automatisk lukket: TODO er fjernet fra koden\"",
+        check=False,
+    )
 
 
 def main():
-    # Check if gh is available
-    _, rc = run("gh --version")
-    if rc != 0:
+    repo = check_prereqs()
+    if not repo:
+        print("[todo-sync] gh CLI mangler eller ikke i et GitHub repo — springer over", file=sys.stderr)
         return
 
-    # Check if we're in a git repo with a remote
-    _, rc = run("gh repo view --json name")
-    if rc != 0:
-        return
-
+    print(f"[todo-sync] Repo: {repo}")
     ensure_label()
+
+    milestone = get_active_milestone(repo)
+    if milestone:
+        print(f"[todo-sync] Aktiv milestone: #{milestone}")
+    else:
+        print("[todo-sync] Ingen aktiv milestone fundet — issues oprettes uden milestone")
+
     cache = load_cache()
-    current_todos = find_todos()
-    milestone = get_active_milestone()
+    current = scan_todos()
 
-    # Create issues for new TODOs
-    for hash_key, todo in current_todos.items():
-        if hash_key not in cache:
-            issue_number = create_issue(todo, milestone)
-            if issue_number:
-                cache[hash_key] = {"issue": issue_number, **todo}
+    # Luk issues for TODOs der er fjernet
+    removed = set(cache.keys()) - set(current.keys())
+    for key in removed:
+        issue_num = cache[key].get("issue")
+        if issue_num:
+            close_issue(issue_num)
+            print(f"[todo-sync] Lukket #{issue_num}: {cache[key].get('text', '')[:60]}")
+        del cache[key]
 
-    # Close issues for removed TODOs
-    for hash_key in list(cache.keys()):
-        if hash_key not in current_todos:
-            if "issue" in cache[hash_key]:
-                close_issue(cache[hash_key]["issue"])
-            del cache[hash_key]
+    # Opret issues for nye TODOs
+    new_keys = set(current.keys()) - set(cache.keys())
+    for key in new_keys:
+        todo = current[key]
+        issue_num = create_issue(todo, milestone)
+        cache[key] = {**todo, "issue": issue_num}
+        if issue_num:
+            print(f"[todo-sync] Oprettet #{issue_num}: {todo['text'][:60]}")
+        else:
+            print(f"[todo-sync] Advarsel: kunne ikke oprette issue for: {todo['text'][:60]}")
+
+    # Opdater fil/linje på eksisterende
+    for key in set(current.keys()) & set(cache.keys()):
+        cache[key] = {**current[key], "issue": cache[key].get("issue")}
 
     save_cache(cache)
+
+    total = len(current)
+    created = len(new_keys)
+    closed = len(removed)
+    print(f"[todo-sync] Færdig — {total} TODOs, {created} nye issues, {closed} lukkede")
 
 
 if __name__ == "__main__":

@@ -1,10 +1,8 @@
-#!/bin/bash
-# Post-commit hook
-# Runs todo-github-sync if available
+#!/usr/bin/env bash
+# Git post-commit hook
+# Kører TODO-sync efter hvert commit
+# Installer: cp .claude/hooks/post-commit .git/hooks/post-commit && chmod +x .git/hooks/post-commit
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-SYNC_SCRIPT="$SCRIPT_DIR/todo-github-sync.py"
-
-if [ -f "$SYNC_SCRIPT" ] && command -v python3 &> /dev/null; then
-  python3 "$SYNC_SCRIPT" 2>/dev/null || true
+if command -v python3 &>/dev/null && [ -f ".claude/hooks/todo-github-sync.py" ]; then
+  python3 .claude/hooks/todo-github-sync.py 2>/dev/null || true
 fi
