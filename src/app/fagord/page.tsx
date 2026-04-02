@@ -75,16 +75,9 @@ export default function FagordPage() {
                     id={slug}
                     className="rounded-lg border border-border p-4 scroll-mt-20"
                   >
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-base font-bold text-foreground">
-                        {entry.term}
-                      </h3>
-                      {entry.pdfPage && (
-                        <span className="text-xs text-muted bg-surface px-2 py-0.5 rounded-full flex-shrink-0">
-                          s. {entry.pdfPage}
-                        </span>
-                      )}
-                    </div>
+                    <h3 className="text-base font-bold text-foreground">
+                      {entry.term}
+                    </h3>
                     <p className="mt-1 text-sm text-muted">
                       {entry.definition}
                     </p>
