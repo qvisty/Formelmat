@@ -192,22 +192,46 @@ export default function PythagorasPage() {
         <GeoGebraEmbed
           appName="geometry"
           commands={[
+            // Retvinklet trekant med ret vinkel i A
             "A = (0, 0)",
             "B = (4, 0)",
-            "C = (4, 3)",
+            "C = (0, 3)",
             "poly1 = Polygon(A, B, C)",
+
+            // Sider
             "a_seg = Segment(B, C)",
             "b_seg = Segment(A, C)",
             "c_seg = Segment(A, B)",
-            "sq_a = Polygon(B, C, 4)",
+
+            // Kvadrater UDENFOR trekanten:
+            // AB (katete a, bund): vend B→A så kvadrat går nedad
+            "sq_a = Polygon(B, A, 4)",
+            // AC (katete b, venstre): vend A→C → kvadrat går til venstre
             "sq_b = Polygon(A, C, 4)",
-            "sq_c = Polygon(A, B, 4)",
-            'text1 = Text("a² = " + round(Length(a_seg)^2, 2), (5.5, 1.5))',
-            'text2 = Text("b² = " + round(Length(b_seg)^2, 2), (1, 4))',
-            'text3 = Text("c² = " + round(Length(c_seg)^2, 2), (1, -2))',
+            // BC (hypotenuse): vend C→B → kvadrat går op til højre
+            "sq_c = Polygon(C, B, 4)",
+
+            // Farver
+            "SetColor(sq_a, 66, 133, 244)",
+            "SetColor(sq_b, 52, 168, 83)",
+            "SetColor(sq_c, 234, 67, 53)",
+            "SetFilling(sq_a, 0.2)",
+            "SetFilling(sq_b, 0.2)",
+            "SetFilling(sq_c, 0.2)",
+            "SetColor(poly1, 200, 200, 200)",
+            "SetFilling(poly1, 0.1)",
+
+            // Dynamiske arealvisninger
+            'text_a = Text("a² = " + round(Length(c_seg)^2, 2), (1, -1.5))',
+            'text_b = Text("b² = " + round(Length(b_seg)^2, 2), (-2.5, 1))',
+            'text_c = Text("c² = " + round(Length(a_seg)^2, 2), (3, 3.5))',
+            'text_sum = Text("a² + b² = " + round(Length(c_seg)^2 + Length(b_seg)^2, 2) + " = c²", (0, -3))',
+
+            // Ret vinkel-markør
+            "SetVisibleInView(1, true)",
           ]}
-          height={500}
-          label="Pythagoras visuelt – træk i hjørnerne"
+          height={550}
+          label="Pythagoras visuelt – træk i A, B eller C og se at a² + b² altid = c²"
         />
       </section>
 
