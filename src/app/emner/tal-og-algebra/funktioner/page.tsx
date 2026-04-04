@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LinearFunctionDemo } from "@/components/LinearFunctionDemo";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { ThemedExample } from "@/components/ThemedExample";
 
 export const metadata = {
   title: "Funktioner – Formelmat",
@@ -175,6 +176,11 @@ export default function FunktionerPage() {
           height={450}
           label="GeoGebra grafregner – skriv dine egne funktioner"
         />
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
+        <ThemedExample topic="funktioner" />
       </section>
 
       <section>

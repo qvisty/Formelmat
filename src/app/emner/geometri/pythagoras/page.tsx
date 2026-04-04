@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { ThemedExample } from "@/components/ThemedExample";
 
 // export const metadata = {
 //   title: "Pythagoras' sætning – Formelmat",
@@ -208,6 +209,11 @@ export default function PythagorasPage() {
           height={500}
           label="Pythagoras visuelt – træk i hjørnerne"
         />
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
+        <ThemedExample topic="pythagoras" />
       </section>
 
       <section>

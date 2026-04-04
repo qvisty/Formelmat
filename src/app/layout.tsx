@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Formelmat – Interaktiv formelsamling til matematik",
@@ -30,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="da" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <Header />
-        <div className="flex flex-1">
-          <Sidebar />
-          <main className="flex-1 min-w-0 overflow-y-auto">{children}</main>
-        </div>
+        <ThemeProvider>
+          <Header />
+          <div className="flex flex-1">
+            <Sidebar />
+            <main className="flex-1 min-w-0 overflow-y-auto">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

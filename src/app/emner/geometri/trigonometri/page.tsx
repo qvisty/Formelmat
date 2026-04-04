@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InteractiveTriangle } from "@/components/InteractiveTriangle";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { ThemedExample } from "@/components/ThemedExample";
 
 export const metadata = {
   title: "Trigonometri – Geometri – Formelmat",
@@ -183,6 +184,11 @@ export default function GeometriTrigonometriPage() {
           height={450}
           label="Retvinklet trekant – træk i A, B eller C"
         />
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
+        <ThemedExample topic="trigonometri" />
       </section>
 
       <section>

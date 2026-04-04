@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { ThemedExample } from "@/components/ThemedExample";
 
 export const metadata = {
   title: "Deskriptorer – Formelmat",
@@ -214,6 +215,11 @@ export default function DeskriptorerPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
+        <ThemedExample topic="statistik" />
       </section>
 
       {/* Prøv selv */}

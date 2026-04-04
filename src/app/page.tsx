@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { topics } from "@/data/topics";
+import { ThemeSelector } from "@/components/ThemeSelector";
 
 export default function Home() {
   return (
@@ -98,6 +99,11 @@ export default function Home() {
             <p className="text-xs text-muted mt-1">Alle begreber A-Å</p>
           </Link>
         </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-foreground mb-4">Personliggør dine eksempler</h2>
+        <ThemeSelector />
       </section>
     </div>
   );
