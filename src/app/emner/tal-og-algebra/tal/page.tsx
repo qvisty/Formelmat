@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { NumberLine } from "@/components/NumberLine";
 
 export const metadata = {
   title: "Tal – Formelmat",
@@ -177,7 +177,7 @@ export default function TalPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Interaktiv tallinje" description="Træk tal rundt på tallinjen og se, hvor de hører hjemme. Find √2 og π mellem de rationale tal." icon="🔢" type="visualizer" />
+        <NumberLine />
       </section>
 
       <section>

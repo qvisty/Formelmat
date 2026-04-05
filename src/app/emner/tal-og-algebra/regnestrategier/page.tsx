@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { FractionVisualizer } from "@/components/FractionVisualizer";
 
 export const metadata = {
   title: "Regnestrategier – Formelmat",
@@ -193,6 +194,14 @@ export default function RegnestrategierPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold mb-4">Prøv selv: Brøkvisualizer</h2>
+        <p className="text-muted mb-4">
+          Brug skydeknapperne til at vælge tæller og nævner og se brøken som cirkel eller søjle.
+        </p>
+        <FractionVisualizer />
       </section>
 
       <section className="mb-10">
