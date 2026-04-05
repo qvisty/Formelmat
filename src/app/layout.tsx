@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { PwaProvider } from "@/components/PwaProvider";
 
 export const metadata: Metadata = {
   title: "Formelmat – Interaktiv formelsamling til matematik",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "Formelmat",
+  },
+  icons: {
+    apple: "/icon.svg",
   },
 };
 
@@ -32,11 +36,13 @@ export default function RootLayout({
     <html lang="da" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <Header />
-          <div className="flex flex-1">
-            <Sidebar />
-            <main className="flex-1 min-w-0 overflow-y-auto">{children}</main>
-          </div>
+          <PwaProvider>
+            <Header />
+            <div className="flex flex-1">
+              <Sidebar />
+              <main className="flex-1 min-w-0 overflow-y-auto">{children}</main>
+            </div>
+          </PwaProvider>
         </ThemeProvider>
       </body>
     </html>
