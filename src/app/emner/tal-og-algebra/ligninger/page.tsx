@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EquationBalancer } from "@/components/EquationBalancer";
 import { ThemedExample } from "@/components/ThemedExample";
 
 export const metadata = {
@@ -175,7 +175,7 @@ export default function LigningerPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Ligningsløser med vægt" description="Se ligningen som en balance. Tilføj eller fjern fra begge sider og se, hvordan x isoleres trin for trin." icon="⚖️" type="visualizer" />
+        <EquationBalancer />
       </section>
 
       <section>

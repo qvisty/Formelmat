@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { PercentCalculator } from "@/components/PercentCalculator";
 import { ThemedExample } from "@/components/ThemedExample";
 
 export const metadata = {
@@ -178,7 +178,7 @@ export default function ProcentOgPromillePage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Procentberegner" description="Indtast et tal og en procentsats, og se resultatet med det samme. Prøv også at beregne procentvis stigning og fald." icon="💰" type="calculator" />
+        <PercentCalculator />
       </section>
 
       <section>

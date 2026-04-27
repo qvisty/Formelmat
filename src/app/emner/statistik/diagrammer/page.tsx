@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { BarChartBuilder } from "@/components/BarChartBuilder";
 
 export const metadata = {
   title: "Diagrammer – Formelmat",
@@ -241,7 +241,7 @@ export default function DiagrammerPage() {
       {/* Prøv selv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Diagram-værksted" description="Indtast data og skift mellem stolpediagram, cirkeldiagram, boksplot og punktdiagram. Se hvordan de samme tal ser ud på forskellige måder." icon="📈" type="visualizer" />
+        <BarChartBuilder />
       </section>
 
       {/* Se også */}
