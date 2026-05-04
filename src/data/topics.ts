@@ -37,6 +37,10 @@ export const topics: Topic[] = [
       { id: "ligninger", title: "Ligninger", href: "/emner/tal-og-algebra/ligninger", description: "Regneregler, grafisk løsning, to ligninger med to ubekendte" },
       { id: "formler-og-udtryk", title: "Formler og udtryk", href: "/emner/tal-og-algebra/formler-og-udtryk", description: "Omskrivninger, kvadratsætninger og algebraiske udtryk" },
       { id: "funktioner", title: "Funktioner", href: "/emner/tal-og-algebra/funktioner", description: "Lineær, andengradsfunktion, omvendt proportionalitet, eksponentiel" },
+      { id: "forhold-og-proportionalitet", title: "Forhold og proportionalitet", href: "/emner/tal-og-algebra/forhold-og-proportionalitet", description: "Forhold, forholdstabel, direkte og omvendt proportionalitet, enhedsrate" },
+      { id: "talfolger", title: "Talfølger", href: "/emner/tal-og-algebra/talfolger", description: "Aritmetiske og geometriske følger, n'te led, rekursive formler" },
+      { id: "uligheder", title: "Uligheder", href: "/emner/tal-og-algebra/uligheder", description: "Lineære uligheder, løsning, grafisk fremstilling på tallinje" },
+      { id: "maengdelaere", title: "Mængdelære", href: "/emner/tal-og-algebra/maengdelaere", description: "Mængder, mængdenotation, fællesmængde, foreningsmængde, Venn-diagrammer" },
     ],
     relatedTopics: ["geometri", "statistik"],
   },
@@ -59,6 +63,7 @@ export const topics: Topic[] = [
       { id: "areal-og-omkreds", title: "Areal og omkreds", href: "/emner/geometri/areal-og-omkreds", description: "Arealformler for trekant, firkant, cirkel og Herons formel" },
       { id: "rumfang", title: "Rumfang og overfladeareal", href: "/emner/geometri/rumfang", description: "Rumfang og overflade for kasse, prisme, cylinder, kegle, kugle" },
       { id: "maaleenheder", title: "Måleenheder", href: "/emner/geometri/maaleenheder", description: "Længde, areal, rumfang, masse, massefylde og fart" },
+      { id: "vektorer", title: "Vektorer", href: "/emner/geometri/vektorer", description: "2D-vektorer, addition, subtraktion, skalarmultiplikation og længde" },
     ],
     relatedTopics: ["tal-og-algebra"],
   },
@@ -73,6 +78,7 @@ export const topics: Topic[] = [
       { id: "deskriptorer", title: "Deskriptorer", href: "/emner/statistik/deskriptorer", description: "Typetal, middeltal, median, kvartilsæt og variationsbredde" },
       { id: "diagrammer", title: "Diagrammer", href: "/emner/statistik/diagrammer", description: "Pinde-, stolpe-, cirkel-, stabeldiagram, boksplot og sumkurve" },
       { id: "sandsynlighed", title: "Sandsynlighed", href: "/emner/statistik/sandsynlighed", description: "Statistisk og teoretisk sandsynlighed, tælletræ og chancetræ" },
+      { id: "kombinatorik", title: "Kombinatorik", href: "/emner/statistik/kombinatorik", description: "Tælleprincipper, permutationer, kombinationer og produktreglen" },
     ],
     relatedTopics: ["tal-og-algebra"],
   },
@@ -170,6 +176,42 @@ export const glossary: GlossaryEntry[] = [
   { term: "Hændelse", definition: "En delmængde af udfaldsrummet.", relatedTopics: ["statistik"] },
   { term: "Tælletræ", definition: "En grafisk oversigt over alle mulige udfald i et kombineret eksperiment.", relatedTopics: ["statistik"] },
   { term: "Chancetræ", definition: "Et tælletræ med sandsynligheder på grenene. Sandsynligheder ganges langs grenene.", relatedTopics: ["statistik"] },
+
+  // Forhold og proportionalitet
+  { term: "Forhold", definition: "En sammenligning af to størrelser. Fx 3:5 betyder 3 for hver 5.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Proportionalitet", definition: "To størrelser er proportionale, når deres forhold er konstant.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Enhedsrate", definition: "Et forhold udtrykt per én enhed. Fx 60 km/t eller 25 kr/kg.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Direkte proportionalitet", definition: "y = k · x. Når x fordobles, fordobles y også. k er proportionalitetskonstanten.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Omvendt proportionalitet", definition: "y = k / x. Når x fordobles, halveres y. Produktet x · y er konstant.", relatedTopics: ["tal-og-algebra"] },
+
+  // Talfølger
+  { term: "Aritmetisk følge", definition: "En talfølge hvor differensen mellem nabotal er konstant. Fx 3, 7, 11, 15, … (d = 4).", relatedTopics: ["tal-og-algebra"] },
+  { term: "Geometrisk følge", definition: "En talfølge hvor kvotienten mellem nabotal er konstant. Fx 2, 6, 18, 54, … (k = 3).", relatedTopics: ["tal-og-algebra"] },
+
+  // Uligheder
+  { term: "Ulighed", definition: "Et udsagn om at én side er større eller mindre end den anden. Fx x > 3 eller 2x + 1 ≤ 7.", relatedTopics: ["tal-og-algebra"] },
+
+  // Mængdelære
+  { term: "Mængde", definition: "En samling af elementer. Skrives med tuborgklammer: A = {1, 2, 3}.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Fællesmængde", definition: "De elementer der er i begge mængder. A ∩ B. Også kaldet snitmængde.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Foreningsmængde", definition: "Alle elementer der er i mindst én af mængderne. A ∪ B.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Delmængde", definition: "A er en delmængde af B, hvis alle elementer i A også er i B. A ⊆ B.", relatedTopics: ["tal-og-algebra"] },
+  { term: "Venn-diagram", definition: "Et diagram med overlappende cirkler, der viser sammenhængen mellem mængder.", relatedTopics: ["tal-og-algebra", "statistik"] },
+
+  // Vektorer
+  { term: "Vektor", definition: "En størrelse med både retning og længde. Skrives som en pil over bogstavet eller som (x, y).", relatedTopics: ["geometri"] },
+  { term: "Stedvektor", definition: "En vektor fra origo til et punkt. Punktet P(3, 5) har stedvektoren (3, 5).", relatedTopics: ["geometri"] },
+
+  // Kombinatorik
+  { term: "Permutation", definition: "En ordnet udvælgelse. Antal permutationer af r fra n: P(n,r) = n! / (n−r)!.", relatedTopics: ["statistik"] },
+  { term: "Kombination", definition: "En uordnet udvælgelse. Antal kombinationer af r fra n: K(n,r) = n! / (r! · (n−r)!).", relatedTopics: ["statistik"] },
+  { term: "Fakultet", definition: "n! = n · (n−1) · (n−2) · … · 2 · 1. Fx 5! = 120. Per definition er 0! = 1.", relatedTopics: ["statistik"] },
+  { term: "Produktreglen", definition: "Har man m valg i første trin og n valg i andet trin, er der m · n mulige udfald i alt.", relatedTopics: ["statistik"] },
+
+  // Udvidelser til statistik
+  { term: "Standardafvigelse", definition: "Et mål for spredning. Jo større standardafvigelse, desto mere spredte er data.", relatedTopics: ["statistik"] },
+  { term: "Korrelation", definition: "Sammenhæng mellem to variable. Positiv: begge stiger. Negativ: den ene falder når den anden stiger.", relatedTopics: ["statistik"] },
+  { term: "Regressionslinje", definition: "Den rette linje der bedst tilpasser punkterne i et punktdiagram (mindste kvadraters metode).", relatedTopics: ["statistik"] },
 ];
 
 export function searchContent(
