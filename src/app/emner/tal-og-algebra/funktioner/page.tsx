@@ -35,6 +35,8 @@ export default function FunktionerPage() {
         En funktion er en regel, der til hvert x-tal giver pr&aelig;cis &eacute;t y-tal. Det lyder m&aring;ske abstrakt, men funktioner beskriver fx sammenh&aelig;ngen mellem tid og afstand, eller antal varer og pris. Her kan du tegne og udforske funktioner.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["funktioner"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">
           Lineær funktion (y = ax + b)
@@ -101,6 +103,8 @@ export default function FunktionerPage() {
           </div>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["funktioner"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">
@@ -185,7 +189,7 @@ export default function FunktionerPage() {
         <ThemedExample topic="funktioner" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["funktioner"]} />
+      <EverydayExplanation {...hverdagsforklaringer["funktioner"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

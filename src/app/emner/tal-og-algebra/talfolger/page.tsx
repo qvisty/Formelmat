@@ -123,6 +123,8 @@ export default function TalfolgerPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["talfolger"][1]} />
+
       {/* Kvadratiske følger */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Kvadratiske følger</h2>
@@ -210,7 +212,7 @@ export default function TalfolgerPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["talfolger"]} />
+      <EverydayExplanation {...hverdagsforklaringer["talfolger"][0]} />
 
       {/* Se også */}
       <section>

@@ -68,6 +68,8 @@ export default function SandsynlighedPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["sandsynlighed"][0]} />
+
       {/* Statistisk sandsynlighed */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Statistisk sandsynlighed</h2>
@@ -88,6 +90,8 @@ export default function SandsynlighedPage() {
           0,47.
         </p>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["sandsynlighed"][1]} />
 
       {/* Teoretisk sandsynlighed */}
       <section className="mb-10">
@@ -312,7 +316,7 @@ export default function SandsynlighedPage() {
         <InteractivePlaceholder title="Sandsynlighedssimulator" description="Kast virtuelle terninger og mønter, og se hvordan den eksperimentelle sandsynlighed nærmer sig den teoretiske, jo flere kast du laver." icon="🎲" type="simulator" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["sandsynlighed"]} />
+      <EverydayExplanation {...hverdagsforklaringer["sandsynlighed"][2]} />
 
       {/* Se også */}
       <section>

@@ -34,6 +34,8 @@ export default function LigningerPage() {
         En ligning er som en v&aelig;gt i balance &ndash; det, der st&aring;r p&aring; den ene side af lighedstegnet, skal v&aelig;re lige s&aring; meget v&aelig;rd som den anden side. Her l&aelig;rer du at finde den ubekendte (ofte x) ved at holde balancen.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["ligninger"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Regneregler for ligninger</h2>
         <p className="text-muted mb-4">
@@ -100,6 +102,8 @@ export default function LigningerPage() {
           </p>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["ligninger"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">
@@ -180,7 +184,7 @@ export default function LigningerPage() {
         <EquationBalancer />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["ligninger"]} />
+      <EverydayExplanation {...hverdagsforklaringer["ligninger"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

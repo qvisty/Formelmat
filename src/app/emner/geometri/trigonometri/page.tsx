@@ -98,6 +98,8 @@ export default function GeometriTrigonometriPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["trigonometri"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Find en side</h2>
         <div className="space-y-3">
@@ -119,6 +121,8 @@ export default function GeometriTrigonometriPage() {
           </div>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["trigonometri"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Find en vinkel</h2>
@@ -193,7 +197,7 @@ export default function GeometriTrigonometriPage() {
         <ThemedExample topic="trigonometri" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["trigonometri"]} />
+      <EverydayExplanation {...hverdagsforklaringer["trigonometri"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

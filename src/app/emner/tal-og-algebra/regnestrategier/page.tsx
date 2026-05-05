@@ -141,6 +141,8 @@ export default function RegnestrategierPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["regnestrategier"][1]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Regler for negative tal</h2>
         <div className="space-y-3">
@@ -230,12 +232,12 @@ export default function RegnestrategierPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["regnestrategier"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Regnehierarki-visualisering" description="Indtast et regneudtryk og se trin for trin, hvordan det udregnes i den rigtige rækkefølge. Parenteser først, så potenser, så gange/dividere, til sidst plus/minus." icon="🧮" type="visualizer" />
       </section>
-
-      <EverydayExplanation items={hverdagsforklaringer["regnestrategier"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

@@ -162,6 +162,8 @@ export default function PythagorasPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["pythagoras"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Forklaring</h2>
         <p className="text-muted mb-3">
@@ -178,6 +180,8 @@ export default function PythagorasPage() {
           (7, 24, 25).
         </p>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["pythagoras"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Beregner</h2>
@@ -242,7 +246,7 @@ export default function PythagorasPage() {
         <ThemedExample topic="pythagoras" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["pythagoras"]} />
+      <EverydayExplanation {...hverdagsforklaringer["pythagoras"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

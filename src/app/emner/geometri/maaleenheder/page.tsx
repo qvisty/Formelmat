@@ -81,6 +81,8 @@ export default function MaaleenhederPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["maaleenheder"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Arealenheder</h2>
         <div className="overflow-x-auto">
@@ -253,7 +255,7 @@ export default function MaaleenhederPage() {
         <InteractivePlaceholder title="Enhedsomregner" description="Vælg en kategori (længde, areal, rumfang, masse), skriv et tal, og se det omregnet til alle andre enheder med det samme." icon="📏" type="converter" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["maaleenheder"]} />
+      <EverydayExplanation {...hverdagsforklaringer["maaleenheder"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

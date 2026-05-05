@@ -110,6 +110,8 @@ export default function ForholdPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["forhold-og-proportionalitet"][0]} />
+
       {/* Direkte proportionalitet */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Direkte proportionalitet</h2>
@@ -131,6 +133,8 @@ export default function ForholdPage() {
           Grafen for direkte proportionalitet er en ret linje gennem origo (0, 0).
         </p>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["forhold-og-proportionalitet"][1]} />
 
       {/* Omvendt proportionalitet */}
       <section className="mb-10">
@@ -206,7 +210,7 @@ export default function ForholdPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["forhold-og-proportionalitet"]} />
+      <EverydayExplanation {...hverdagsforklaringer["forhold-og-proportionalitet"][2]} />
 
       {/* Se også */}
       <section>

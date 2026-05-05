@@ -66,6 +66,8 @@ export default function VektorerPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["vektorer"][0]} />
+
       {/* Addition og subtraktion */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Addition og subtraktion</h2>
@@ -192,7 +194,7 @@ export default function VektorerPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["vektorer"]} />
+      <EverydayExplanation {...hverdagsforklaringer["vektorer"][1]} />
 
       {/* Se også */}
       <section>

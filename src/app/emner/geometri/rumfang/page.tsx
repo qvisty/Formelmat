@@ -86,6 +86,8 @@ export default function RumfangPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["rumfang"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Cylinder</h2>
         <div className="space-y-3">
@@ -168,7 +170,7 @@ export default function RumfangPage() {
         <InteractivePlaceholder title="Rumfangsberegner" description="Vælg en figur, indtast mål, og se rumfang og overfladeareal beregnet med det samme. Sammenlign forskellige figurer med hinanden." icon="📦" type="calculator" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["rumfang"]} />
+      <EverydayExplanation {...hverdagsforklaringer["rumfang"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

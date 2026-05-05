@@ -87,6 +87,8 @@ export default function ArealOgOmkredsPage() {
             </p>
           </div>
         </div>
+        <EverydayExplanation {...hverdagsforklaringer["areal-og-omkreds"][0]} />
+        <EverydayExplanation {...hverdagsforklaringer["areal-og-omkreds"][1]} />
       </section>
 
       <section className="mb-10">
@@ -196,7 +198,7 @@ export default function ArealOgOmkredsPage() {
         <ThemedExample topic="areal" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["areal-og-omkreds"]} />
+      <EverydayExplanation {...hverdagsforklaringer["areal-og-omkreds"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

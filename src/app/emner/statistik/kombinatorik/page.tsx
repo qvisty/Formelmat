@@ -109,6 +109,8 @@ export default function KombinatorikPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["kombinatorik"][2]} />
+
       {/* Permutationer */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Permutationer (ordnede valg)</h2>
@@ -130,6 +132,8 @@ export default function KombinatorikPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["kombinatorik"][0]} />
+
       {/* Kombinationer */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Kombinationer (uordnede valg)</h2>
@@ -150,6 +154,8 @@ export default function KombinatorikPage() {
           </p>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["kombinatorik"][1]} />
 
       {/* Permutation vs kombination */}
       <section className="mb-10">
@@ -180,8 +186,6 @@ export default function KombinatorikPage() {
           type="calculator"
         />
       </section>
-
-      <EverydayExplanation items={hverdagsforklaringer["kombinatorik"]} />
 
       {/* Se også */}
       <section>

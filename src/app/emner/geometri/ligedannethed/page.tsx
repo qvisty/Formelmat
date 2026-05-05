@@ -80,6 +80,8 @@ export default function LigedannethedPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["ligedannethed"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Ensvinklede trekanter</h2>
         <p className="text-muted mb-3">
@@ -106,7 +108,7 @@ export default function LigedannethedPage() {
         <InteractivePlaceholder title="Målforhold-visualisering" description="Vælg et målforhold og se, hvordan en figur ændrer størrelse. Se samtidig, hvordan længde-, areal- og rumfangsforholdet hænger sammen." icon="🔍" type="visualizer" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["ligedannethed"]} />
+      <EverydayExplanation {...hverdagsforklaringer["ligedannethed"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

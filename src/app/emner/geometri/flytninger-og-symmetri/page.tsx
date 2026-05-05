@@ -66,6 +66,8 @@ export default function FlytningerOgSymmetriPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["flytninger-og-symmetri"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Symmetrityper</h2>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -138,7 +140,7 @@ export default function FlytningerOgSymmetriPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["flytninger-og-symmetri"]} />
+      <EverydayExplanation {...hverdagsforklaringer["flytninger-og-symmetri"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

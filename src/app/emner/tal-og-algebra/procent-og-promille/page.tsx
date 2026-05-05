@@ -36,6 +36,8 @@ export default function ProcentOgPromillePage() {
         Du bruger procent hele tiden &ndash; n&aring;r du handler p&aring; udsalg, ser valgresultater eller l&aelig;ser om renter. Her l&aelig;rer du at regne med procent og promille, s&aring; du altid kan finde ud af, hvad tingene egentlig koster.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["procent-og-promille"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Procent</h2>
         <div className="space-y-3">
@@ -105,6 +107,8 @@ export default function ProcentOgPromillePage() {
           </div>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["procent-og-promille"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Promille</h2>
@@ -183,7 +187,7 @@ export default function ProcentOgPromillePage() {
         <PercentCalculator />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["procent-og-promille"]} />
+      <EverydayExplanation {...hverdagsforklaringer["procent-og-promille"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

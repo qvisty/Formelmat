@@ -63,6 +63,8 @@ export default function LinjerOgVinklerPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["linjer-og-vinkler"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Vinkelregler</h2>
         <div className="space-y-3">
@@ -129,7 +131,7 @@ export default function LinjerOgVinklerPage() {
         <InteractivePlaceholder title="Vinkel-udforskeren" description="Træk i to linjer, der skærer hinanden, og se hvordan nabovinkler, topvinkler og ensliggende vinkler ændrer sig. Alle regler opdateres live." icon="📐" type="explorer" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["linjer-og-vinkler"]} />
+      <EverydayExplanation {...hverdagsforklaringer["linjer-og-vinkler"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

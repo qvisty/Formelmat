@@ -35,6 +35,8 @@ export default function FormlerOgUdtrykPage() {
         Algebraiske udtryk er en slags matematisk sprog, hvor bogstaver st&aring;r for tal. Her l&aelig;rer du at samle, gange ud, s&aelig;tte i parentes og forenkle udtryk &ndash; det er n&oslash;glen til at l&oslash;se ligninger og forst&aring; formler.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["formler-og-udtryk"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Grundlæggende regler</h2>
         <div className="space-y-3">
@@ -162,7 +164,7 @@ export default function FormlerOgUdtrykPage() {
         <InteractivePlaceholder title="Udtryksforenkling" description="Skriv et algebraisk udtryk og se trin for trin, hvordan det forenkles. Øv dig med parenteser, kvadratsætninger og reducering." icon="✏️" type="visualizer" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["formler-og-udtryk"]} />
+      <EverydayExplanation {...hverdagsforklaringer["formler-og-udtryk"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

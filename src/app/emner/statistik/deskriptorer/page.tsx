@@ -107,6 +107,8 @@ export default function DeskriptorerPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["deskriptorer"][0]} />
+
       {/* Størsteværdi, mindsteværdi, variationsbredde */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Størsteværdi, mindsteværdi og variationsbredde</h2>
@@ -126,6 +128,8 @@ export default function DeskriptorerPage() {
           Variationsbredde = 12 &minus; 2 = <strong>10</strong>.
         </p>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["deskriptorer"][1]} />
 
       {/* Kvartilsæt */}
       <section className="mb-10">
@@ -229,8 +233,6 @@ export default function DeskriptorerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Deskriptor-beregner" description="Skriv dine tal, og se typetal, middeltal, median, kvartilsæt og variationsbredde beregnet med det samme. Inkl. boksplot." icon="📊" type="calculator" />
       </section>
-
-      <EverydayExplanation items={hverdagsforklaringer["deskriptorer"]} />
 
       {/* Se også */}
       <section>

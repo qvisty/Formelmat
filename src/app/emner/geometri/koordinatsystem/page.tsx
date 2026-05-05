@@ -68,6 +68,8 @@ export default function KoordinatsystemPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["koordinatsystem"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Ligning for en ret linje</h2>
         <div className="space-y-3">
@@ -164,7 +166,7 @@ export default function KoordinatsystemPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["koordinatsystem"]} />
+      <EverydayExplanation {...hverdagsforklaringer["koordinatsystem"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

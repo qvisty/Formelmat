@@ -36,6 +36,8 @@ export default function PotensOgRoedderPage() {
         Potenser er en smart m&aring;de at skrive tal, der ganges med sig selv mange gange. R&oslash;dder g&oslash;r det modsatte. Du bruger dem fx til at regne med meget store eller meget sm&aring; tal &ndash; og de dukker op overalt i formler.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["potenser-og-roedder"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Potenser</h2>
         <div className="formula-box mb-3">
@@ -129,6 +131,8 @@ export default function PotensOgRoedderPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["potenser-og-roedder"][1]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Talfølger</h2>
         <p className="text-muted mb-4">
@@ -177,7 +181,7 @@ export default function PotensOgRoedderPage() {
         <InteractivePlaceholder title="Potens- og rodberegner" description="Skriv et tal og en eksponent, og se udregningen trin for trin. Fx 2⁵ = 2 × 2 × 2 × 2 × 2 = 32." icon="📊" type="calculator" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["potenser-og-roedder"]} />
+      <EverydayExplanation {...hverdagsforklaringer["potenser-og-roedder"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

@@ -76,6 +76,8 @@ export default function FirkanterOgCirklerPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["firkanter-og-cirkler"][1]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Cirklen</h2>
         <p className="text-muted mb-4">
@@ -146,7 +148,7 @@ export default function FirkanterOgCirklerPage() {
         <InteractivePlaceholder title="Firkant-udforskeren" description="Vælg en firkanttype og træk i hjørnerne. Se hvordan areal, omkreds, diagonaler og vinkler ændrer sig. Sammenlign de forskellige typer." icon="⬜" type="explorer" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["firkanter-og-cirkler"]} />
+      <EverydayExplanation {...hverdagsforklaringer["firkanter-og-cirkler"][0]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

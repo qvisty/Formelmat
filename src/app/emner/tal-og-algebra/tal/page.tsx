@@ -125,6 +125,8 @@ export default function TalPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["tal"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Primtal</h2>
         <p className="text-muted mb-3">
@@ -139,6 +141,10 @@ export default function TalPage() {
           </p>
         </div>
       </section>
+
+      <EverydayExplanation {...hverdagsforklaringer["tal"][2]} />
+
+      <EverydayExplanation {...hverdagsforklaringer["tal"][1]} />
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Tallinjen</h2>
@@ -181,8 +187,6 @@ export default function TalPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <NumberLine />
       </section>
-
-      <EverydayExplanation items={hverdagsforklaringer["tal"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

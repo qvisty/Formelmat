@@ -113,6 +113,8 @@ export default function DiagrammerPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["diagrammer"][0]} />
+
       {/* Boksplot */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-3">Boksplot</h2>
@@ -191,6 +193,8 @@ export default function DiagrammerPage() {
         </p>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["diagrammer"][1]} />
+
       {/* Oversigt */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Oversigt: Hvornår bruger man hvad?</h2>
@@ -245,8 +249,6 @@ export default function DiagrammerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <BarChartBuilder />
       </section>
-
-      <EverydayExplanation items={hverdagsforklaringer["diagrammer"]} />
 
       {/* Se også */}
       <section>

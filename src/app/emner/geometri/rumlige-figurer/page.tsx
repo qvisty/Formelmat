@@ -53,6 +53,8 @@ export default function RumligeFigurerPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["rumlige-figurer"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Almindelige rumlige figurer</h2>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -163,7 +165,7 @@ export default function RumligeFigurerPage() {
         <InteractivePlaceholder title="3D-figur-visning" description="Roter og zoom ind på rumlige figurer. Se hjørner, kanter og sideflader, og forstå forskellen mellem de forskellige typer." icon="🎲" type="visualizer" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["rumlige-figurer"]} />
+      <EverydayExplanation {...hverdagsforklaringer["rumlige-figurer"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

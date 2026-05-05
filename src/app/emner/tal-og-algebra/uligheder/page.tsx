@@ -59,6 +59,8 @@ export default function UlighederPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["uligheder"][0]} />
+
       {/* Regneregler */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Regneregler for uligheder</h2>
@@ -181,7 +183,7 @@ export default function UlighederPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["uligheder"]} />
+      <EverydayExplanation {...hverdagsforklaringer["uligheder"][1]} />
 
       {/* Se også */}
       <section>

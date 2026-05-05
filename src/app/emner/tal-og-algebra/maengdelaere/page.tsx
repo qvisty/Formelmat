@@ -67,6 +67,8 @@ export default function MaengdelaerePage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["maengdelaere"][0]} />
+
       {/* Operationer */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Mængdeoperationer</h2>
@@ -194,7 +196,7 @@ export default function MaengdelaerePage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["maengdelaere"]} />
+      <EverydayExplanation {...hverdagsforklaringer["maengdelaere"][1]} />
 
       {/* Se også */}
       <section>

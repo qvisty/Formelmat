@@ -100,6 +100,7 @@ export default function PolygonerOgTrekanterPage() {
           </p>
           <p className="math-formula text-lg">A + B + C = 180°</p>
         </div>
+        <EverydayExplanation {...hverdagsforklaringer["polygoner-og-trekanter"][0]} />
       </section>
 
       <section className="mb-10">
@@ -153,7 +154,7 @@ export default function PolygonerOgTrekanterPage() {
         />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["polygoner-og-trekanter"]} />
+      <EverydayExplanation {...hverdagsforklaringer["polygoner-og-trekanter"][1]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

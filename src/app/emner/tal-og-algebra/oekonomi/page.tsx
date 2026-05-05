@@ -34,6 +34,8 @@ export default function OekonomiPage() {
         Matematik i &oslash;konomi handler om penge &ndash; opsparing, l&aring;n og renter. Med formlen for sammensat rente kan du fx beregne, hvor meget dine penge vokser over tid, eller hvad et l&aring;n reelt koster dig.
       </p>
 
+      <EverydayExplanation {...hverdagsforklaringer["oekonomi"][0]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Sammensat rente</h2>
         <p className="text-muted mb-4">
@@ -129,6 +131,8 @@ export default function OekonomiPage() {
         </div>
       </section>
 
+      <EverydayExplanation {...hverdagsforklaringer["oekonomi"][1]} />
+
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Lån og ydelse</h2>
         <p className="text-muted mb-4">
@@ -198,7 +202,7 @@ export default function OekonomiPage() {
         <InteractivePlaceholder title="Renteberegner" description="Indtast et startbeløb, en rentesats og antal år – og se hvordan din opsparing vokser år for år. Sammenlign forskellige rentesatser." icon="🏦" type="calculator" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["oekonomi"]} />
+      <EverydayExplanation {...hverdagsforklaringer["oekonomi"][2]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

@@ -215,7 +215,9 @@ export default function DatasaetPage() {
         <InteractivePlaceholder title="Frekvenstabell-bygger" description="Indtast dine egne data, og se dem automatisk organiseret i en tabel med hyppighed, summeret hyppighed og frekvens." icon="📋" type="calculator" />
       </section>
 
-      <EverydayExplanation items={hverdagsforklaringer["datasaet"]} />
+      <EverydayExplanation {...hverdagsforklaringer["datasaet"][0]} />
+
+      <EverydayExplanation {...hverdagsforklaringer["datasaet"][1]} />
 
       {/* Se også */}
       <section>
