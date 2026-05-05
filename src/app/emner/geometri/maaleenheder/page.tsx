@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Måleenheder – Formelmat",
@@ -250,6 +252,8 @@ export default function MaaleenhederPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Enhedsomregner" description="Vælg en kategori (længde, areal, rumfang, masse), skriv et tal, og se det omregnet til alle andre enheder med det samme." icon="📏" type="converter" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["maaleenheder"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

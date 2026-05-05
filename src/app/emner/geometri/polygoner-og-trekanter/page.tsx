@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Polygoner og trekanter – Formelmat",
@@ -150,6 +152,8 @@ export default function PolygonerOgTrekanterPage() {
           label="GeoGebra geometri – tegn og mål figurer"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["polygoner-og-trekanter"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

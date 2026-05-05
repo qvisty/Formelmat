@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Firkanter og cirkler – Formelmat",
@@ -143,6 +145,8 @@ export default function FirkanterOgCirklerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Firkant-udforskeren" description="Vælg en firkanttype og træk i hjørnerne. Se hvordan areal, omkreds, diagonaler og vinkler ændrer sig. Sammenlign de forskellige typer." icon="⬜" type="explorer" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["firkanter-og-cirkler"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

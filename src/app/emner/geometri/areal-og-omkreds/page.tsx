@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Areal og omkreds – Formelmat",
@@ -193,6 +195,8 @@ export default function ArealOgOmkredsPage() {
         <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
         <ThemedExample topic="areal" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["areal-og-omkreds"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

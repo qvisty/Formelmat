@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Koordinatsystem – Formelmat",
@@ -161,6 +163,8 @@ export default function KoordinatsystemPage() {
           label="GeoGebra grafregner – skriv funktioner i feltet"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["koordinatsystem"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

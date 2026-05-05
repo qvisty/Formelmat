@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { BarChartBuilder } from "@/components/BarChartBuilder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Diagrammer – Formelmat",
@@ -243,6 +245,8 @@ export default function DiagrammerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <BarChartBuilder />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["diagrammer"]} />
 
       {/* Se også */}
       <section>

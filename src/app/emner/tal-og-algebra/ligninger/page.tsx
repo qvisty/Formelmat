@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { EquationBalancer } from "@/components/EquationBalancer";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Ligninger – Formelmat",
@@ -177,6 +179,8 @@ export default function LigningerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <EquationBalancer />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["ligninger"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

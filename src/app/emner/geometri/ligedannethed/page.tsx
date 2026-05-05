@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Ligedannethed – Formelmat",
@@ -103,6 +105,8 @@ export default function LigedannethedPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Målforhold-visualisering" description="Vælg et målforhold og se, hvordan en figur ændrer størrelse. Se samtidig, hvordan længde-, areal- og rumfangsforholdet hænger sammen." icon="🔍" type="visualizer" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["ligedannethed"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

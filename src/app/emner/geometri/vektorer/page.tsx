@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Vektorer – Formelmat",
@@ -189,6 +191,8 @@ export default function VektorerPage() {
           type="visualizer"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["vektorer"]} />
 
       {/* Se også */}
       <section>

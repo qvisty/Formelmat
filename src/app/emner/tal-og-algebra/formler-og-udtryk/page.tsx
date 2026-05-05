@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Formler og algebraiske udtryk – Formelmat",
@@ -159,6 +161,8 @@ export default function FormlerOgUdtrykPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Udtryksforenkling" description="Skriv et algebraisk udtryk og se trin for trin, hvordan det forenkles. Øv dig med parenteser, kvadratsætninger og reducering." icon="✏️" type="visualizer" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["formler-og-udtryk"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

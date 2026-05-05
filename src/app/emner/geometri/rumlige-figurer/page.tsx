@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Rumlige figurer – Formelmat",
@@ -160,6 +162,8 @@ export default function RumligeFigurerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="3D-figur-visning" description="Roter og zoom ind på rumlige figurer. Se hjørner, kanter og sideflader, og forstå forskellen mellem de forskellige typer." icon="🎲" type="visualizer" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["rumlige-figurer"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

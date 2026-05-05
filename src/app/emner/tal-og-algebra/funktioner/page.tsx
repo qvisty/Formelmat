@@ -2,6 +2,8 @@ import Link from "next/link";
 import { LinearFunctionDemo } from "@/components/LinearFunctionDemo";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Funktioner – Formelmat",
@@ -182,6 +184,8 @@ export default function FunktionerPage() {
         <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
         <ThemedExample topic="funktioner" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["funktioner"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

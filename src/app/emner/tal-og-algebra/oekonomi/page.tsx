@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Økonomi – Formelmat",
@@ -195,6 +197,8 @@ export default function OekonomiPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Renteberegner" description="Indtast et startbeløb, en rentesats og antal år – og se hvordan din opsparing vokser år for år. Sammenlign forskellige rentesatser." icon="🏦" type="calculator" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["oekonomi"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

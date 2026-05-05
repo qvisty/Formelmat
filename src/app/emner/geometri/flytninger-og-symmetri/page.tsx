@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Flytninger og symmetri – Formelmat",
@@ -135,6 +137,8 @@ export default function FlytningerOgSymmetriPage() {
           label="Åbent GeoGebra geometriværktøj – prøv flytninger"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["flytninger-og-symmetri"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

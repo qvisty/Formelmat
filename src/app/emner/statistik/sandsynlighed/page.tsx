@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Sandsynlighed – Formelmat",
@@ -309,6 +311,8 @@ export default function SandsynlighedPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Sandsynlighedssimulator" description="Kast virtuelle terninger og mønter, og se hvordan den eksperimentelle sandsynlighed nærmer sig den teoretiske, jo flere kast du laver." icon="🎲" type="simulator" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["sandsynlighed"]} />
 
       {/* Se også */}
       <section>

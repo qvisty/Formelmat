@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { NumberLine } from "@/components/NumberLine";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Tal – Formelmat",
@@ -179,6 +181,8 @@ export default function TalPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <NumberLine />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["tal"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

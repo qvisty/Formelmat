@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Linjer og vinkler – Formelmat",
@@ -126,6 +128,8 @@ export default function LinjerOgVinklerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Vinkel-udforskeren" description="Træk i to linjer, der skærer hinanden, og se hvordan nabovinkler, topvinkler og ensliggende vinkler ændrer sig. Alle regler opdateres live." icon="📐" type="explorer" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["linjer-og-vinkler"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

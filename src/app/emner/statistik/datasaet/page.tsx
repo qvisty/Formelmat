@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Datasæt og tabeller – Formelmat",
@@ -212,6 +214,8 @@ export default function DatasaetPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Frekvenstabell-bygger" description="Indtast dine egne data, og se dem automatisk organiseret i en tabel med hyppighed, summeret hyppighed og frekvens." icon="📋" type="calculator" />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["datasaet"]} />
 
       {/* Se også */}
       <section>

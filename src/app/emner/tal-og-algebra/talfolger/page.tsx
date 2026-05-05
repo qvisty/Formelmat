@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Talfølger – Formelmat",
@@ -207,6 +209,8 @@ export default function TalfolgerPage() {
           type="calculator"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["talfolger"]} />
 
       {/* Se også */}
       <section>

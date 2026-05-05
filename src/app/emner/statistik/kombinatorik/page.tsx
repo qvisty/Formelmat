@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Kombinatorik – Formelmat",
@@ -178,6 +180,8 @@ export default function KombinatorikPage() {
           type="calculator"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["kombinatorik"]} />
 
       {/* Se også */}
       <section>

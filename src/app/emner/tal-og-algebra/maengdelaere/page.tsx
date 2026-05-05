@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Mængdelære – Formelmat",
@@ -191,6 +193,8 @@ export default function MaengdelaerePage() {
           type="visualizer"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["maengdelaere"]} />
 
       {/* Se også */}
       <section>

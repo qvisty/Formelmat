@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Forhold og proportionalitet – Formelmat",
@@ -203,6 +205,8 @@ export default function ForholdPage() {
           type="explorer"
         />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["forhold-og-proportionalitet"]} />
 
       {/* Se også */}
       <section>

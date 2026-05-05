@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PercentCalculator } from "@/components/PercentCalculator";
 import { ThemedExample } from "@/components/ThemedExample";
+import { EverydayExplanation } from "@/components/EverydayExplanation";
+import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
 export const metadata = {
   title: "Procent og promille – Formelmat",
@@ -180,6 +182,8 @@ export default function ProcentOgPromillePage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <PercentCalculator />
       </section>
+
+      <EverydayExplanation items={hverdagsforklaringer["procent-og-promille"]} />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>
