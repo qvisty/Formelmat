@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Deskriptorer – Formelmat",
@@ -227,6 +228,8 @@ export default function DeskriptorerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Deskriptor-beregner" description="Skriv dine tal, og se typetal, middeltal, median, kvartilsæt og variationsbredde beregnet med det samme. Inkl. boksplot." icon="📊" type="calculator" />
       </section>
+
+      <TopicExercises topicId="deskriptorer" />
 
       {/* Se også */}
       <section>

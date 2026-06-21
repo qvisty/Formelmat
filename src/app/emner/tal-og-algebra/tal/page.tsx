@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Tal – Formelmat",
@@ -179,6 +180,8 @@ export default function TalPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Interaktiv tallinje" description="Træk tal rundt på tallinjen og se, hvor de hører hjemme. Find √2 og π mellem de rationale tal." icon="🔢" type="visualizer" />
       </section>
+
+      <TopicExercises topicId="tal" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

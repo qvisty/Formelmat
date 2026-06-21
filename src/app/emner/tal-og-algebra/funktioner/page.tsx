@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LinearFunctionDemo } from "@/components/LinearFunctionDemo";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Funktioner – Formelmat",
@@ -182,6 +183,8 @@ export default function FunktionerPage() {
         <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
         <ThemedExample topic="funktioner" />
       </section>
+
+      <TopicExercises topicId="funktioner" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>
