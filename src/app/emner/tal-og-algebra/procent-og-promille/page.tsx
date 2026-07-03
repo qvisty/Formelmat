@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Procent og promille – Formelmat",
@@ -180,6 +181,8 @@ export default function ProcentOgPromillePage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Procentberegner" description="Indtast et tal og en procentsats, og se resultatet med det samme. Prøv også at beregne procentvis stigning og fald." icon="💰" type="calculator" />
       </section>
+
+      <TopicExercises topicId="procent-og-promille" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Ligninger – Formelmat",
@@ -177,6 +178,8 @@ export default function LigningerPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Ligningsløser med vægt" description="Se ligningen som en balance. Tilføj eller fjern fra begge sider og se, hvordan x isoleres trin for trin." icon="⚖️" type="visualizer" />
       </section>
+
+      <TopicExercises topicId="ligninger" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

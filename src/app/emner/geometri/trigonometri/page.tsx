@@ -2,6 +2,7 @@ import Link from "next/link";
 import { InteractiveTriangle } from "@/components/InteractiveTriangle";
 import { GeoGebraEmbed } from "@/components/GeoGebraEmbed";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Trigonometri – Geometri – Formelmat",
@@ -190,6 +191,8 @@ export default function GeometriTrigonometriPage() {
         <h2 className="text-xl font-bold mb-4">Eksempel fra virkeligheden</h2>
         <ThemedExample topic="trigonometri" />
       </section>
+
+      <TopicExercises topicId="trigonometri" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>

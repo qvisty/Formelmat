@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
 import { ThemedExample } from "@/components/ThemedExample";
+import { TopicExercises } from "@/components/TopicExercises";
 
 export const metadata = {
   title: "Potenser og rødder – Formelmat",
@@ -174,6 +175,8 @@ export default function PotensOgRoedderPage() {
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
         <InteractivePlaceholder title="Potens- og rodberegner" description="Skriv et tal og en eksponent, og se udregningen trin for trin. Fx 2⁵ = 2 × 2 × 2 × 2 × 2 = 32." icon="📊" type="calculator" />
       </section>
+
+      <TopicExercises topicId="potenser-og-roedder" />
 
       <section>
         <h2 className="text-xl font-bold mb-4">Se også</h2>
