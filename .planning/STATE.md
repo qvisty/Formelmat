@@ -30,7 +30,7 @@ Fase 1 er afsluttet. Fase 2 fokuserer nu på at færdiggøre interaktivitet, sø
 ### Næste skridt (Fase 2 – Interaktiv udvidelse)
 
 - [ ] Flere interaktive komponenter (tallinjer, brøkvisualiseringer)
-- [ ] Forbedret søgning med fuzzy matching
+- [x] Forbedret søgning med fuzzy matching og tilgængelig søgemodal
 - [ ] Præsentationsvisning til lærerbrug
 - [ ] Animations og overgange
 - [ ] Udvid offline-cachen og verificér PWA-installation på målplatforme

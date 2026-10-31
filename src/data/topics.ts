@@ -21,6 +21,13 @@ export interface GlossaryEntry {
   relatedTopics: string[];
 }
 
+export interface SearchResult {
+  type: "topic" | "subtopic" | "glossary";
+  title: string;
+  href: string;
+  description: string;
+}
+
 export const topics: Topic[] = [
   {
     id: "tal-og-algebra",
@@ -214,35 +221,100 @@ export const glossary: GlossaryEntry[] = [
   { term: "Regressionslinje", definition: "Den rette linje der bedst tilpasser punkterne i et punktdiagram (mindste kvadraters metode).", relatedTopics: ["statistik"] },
 ];
 
-export function searchContent(
-  query: string
-): Array<{ type: "topic" | "subtopic" | "glossary"; title: string; href: string; description: string }> {
-  const q = query.toLowerCase().trim();
-  if (!q) return [];
+const searchableContent: SearchResult[] = [
+  ...topics.flatMap((topic) => [
+    { type: "topic" as const, title: topic.title, href: topic.href, description: topic.description },
+    ...topic.subtopics.map((subtopic) => ({
+      type: "subtopic" as const,
+      title: subtopic.title,
+      href: subtopic.href,
+      description: subtopic.description,
+    })),
+  ]),
+  ...glossary.map((entry) => ({
+    type: "glossary" as const,
+    title: entry.term,
+    href: `/fagord#${entry.term.toLowerCase().replace(/[^a-zæøå0-9]/g, "-")}`,
+    description: entry.definition,
+  })),
+];
 
-  const results: Array<{ type: "topic" | "subtopic" | "glossary"; title: string; href: string; description: string }> = [];
+function normalizeSearchText(value: string) {
+  return value
+    .toLocaleLowerCase("da-DK")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "oe")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
 
-  for (const topic of topics) {
-    if (topic.title.toLowerCase().includes(q) || topic.description.toLowerCase().includes(q)) {
-      results.push({ type: "topic", title: topic.title, href: topic.href, description: topic.description });
+function editDistance(left: string, right: string) {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+    const current = [leftIndex];
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+      current[rightIndex] = Math.min(
+        current[rightIndex - 1] + 1,
+        previous[rightIndex] + 1,
+        previous[rightIndex - 1] + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1),
+      );
     }
-    for (const sub of topic.subtopics) {
-      if (sub.title.toLowerCase().includes(q) || sub.description.toLowerCase().includes(q)) {
-        results.push({ type: "subtopic", title: sub.title, href: sub.href, description: sub.description });
-      }
-    }
+    previous.splice(0, previous.length, ...current);
   }
 
-  for (const entry of glossary) {
-    if (entry.term.toLowerCase().includes(q) || entry.definition.toLowerCase().includes(q)) {
-      results.push({
-        type: "glossary",
-        title: entry.term,
-        href: `/fagord#${entry.term.toLowerCase().replace(/[^a-zæøå0-9]/g, "-")}`,
-        description: entry.definition,
-      });
-    }
+  return previous[right.length];
+}
+
+function fuzzyWordScore(queryWord: string, candidateWord: string) {
+  if (candidateWord === queryWord) return 0;
+  if (candidateWord.startsWith(queryWord)) return 1;
+  if (candidateWord.includes(queryWord)) return 2;
+
+  const allowedDistance = queryWord.length >= 8 ? 2 : queryWord.length >= 4 ? 1 : 0;
+  const distance = editDistance(queryWord, candidateWord);
+  return distance <= allowedDistance ? 3 + distance : null;
+}
+
+function scoreResult(query: string, result: SearchResult) {
+  const title = normalizeSearchText(result.title);
+  const description = normalizeSearchText(result.description);
+  const queryWords = query.split(" ");
+  const titleWords = title.split(" ");
+  const allWords = `${title} ${description}`.split(" ");
+
+  if (title === query) return 0;
+  if (title.startsWith(query)) return 5;
+  if (title.includes(query)) return 10;
+  if (description.includes(query)) return 20;
+
+  let score = 30;
+  for (const queryWord of queryWords) {
+    const titleScores = titleWords
+      .map((word) => fuzzyWordScore(queryWord, word))
+      .filter((value): value is number => value !== null);
+    const contentScores = allWords
+      .map((word) => fuzzyWordScore(queryWord, word))
+      .filter((value): value is number => value !== null);
+    const bestScore = Math.min(...titleScores, ...contentScores.map((value) => value + 5));
+
+    if (!Number.isFinite(bestScore)) return null;
+    score += bestScore;
   }
 
-  return results;
+  return score;
+}
+
+export function searchContent(query: string): SearchResult[] {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return [];
+
+  return searchableContent
+    .map((result, index) => ({ result, index, score: scoreResult(normalizedQuery, result) }))
+    .filter((match): match is { result: SearchResult; index: number; score: number } => match.score !== null)
+    .sort((left, right) => left.score - right.score || left.index - right.index)
+    .slice(0, 12)
+    .map(({ result }) => result);
 }
