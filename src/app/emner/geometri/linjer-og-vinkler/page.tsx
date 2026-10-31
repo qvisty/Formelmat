@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -128,7 +128,7 @@ export default function LinjerOgVinklerPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Vinkel-udforskeren" description="Træk i to linjer, der skærer hinanden, og se hvordan nabovinkler, topvinkler og ensliggende vinkler ændrer sig. Alle regler opdateres live." icon="📐" type="explorer" />
+        <TopicPractice topic="angles" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["linjer-og-vinkler"][1]} />

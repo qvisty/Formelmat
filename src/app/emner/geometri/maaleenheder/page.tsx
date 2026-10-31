@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -252,7 +252,7 @@ export default function MaaleenhederPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Enhedsomregner" description="Vælg en kategori (længde, areal, rumfang, masse), skriv et tal, og se det omregnet til alle andre enheder med det samme." icon="📏" type="converter" />
+        <TopicPractice topic="units" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["maaleenheder"][1]} />

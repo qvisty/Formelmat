@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -231,7 +231,7 @@ export default function DeskriptorerPage() {
       {/* Prøv selv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Deskriptor-beregner" description="Skriv dine tal, og se typetal, middeltal, median, kvartilsæt og variationsbredde beregnet med det samme. Inkl. boksplot." icon="📊" type="calculator" />
+        <TopicPractice topic="descriptors" />
       </section>
 
       {/* Se også */}

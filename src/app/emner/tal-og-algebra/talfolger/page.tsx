@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -204,12 +204,7 @@ export default function TalfolgerPage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Talfølge-udforsker"
-          description="Indtast de første led, og se om følgen er aritmetisk, geometrisk eller kvadratisk. Find formlen for det n'te led."
-          icon="🔢"
-          type="calculator"
-        />
+        <TopicPractice topic="sequences" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["talfolger"][0]} />

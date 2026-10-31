@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -105,7 +105,7 @@ export default function LigedannethedPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Målforhold-visualisering" description="Vælg et målforhold og se, hvordan en figur ændrer størrelse. Se samtidig, hvordan længde-, areal- og rumfangsforholdet hænger sammen." icon="🔍" type="visualizer" />
+        <TopicPractice topic="similarity" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["ligedannethed"][1]} />

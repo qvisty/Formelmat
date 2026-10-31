@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -188,12 +188,7 @@ export default function MaengdelaerePage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Venn-diagram-bygger"
-          description="Opret to eller tre mængder og se Venn-diagrammet opdatere sig. Find fællesmængde, foreningsmængde og differensmængde."
-          icon="⭕"
-          type="visualizer"
-        />
+        <TopicPractice topic="sets" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["maengdelaere"][1]} />

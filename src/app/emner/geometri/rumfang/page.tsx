@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -167,7 +167,7 @@ export default function RumfangPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Rumfangsberegner" description="Vælg en figur, indtast mål, og se rumfang og overfladeareal beregnet med det samme. Sammenlign forskellige figurer med hinanden." icon="📦" type="calculator" />
+        <TopicPractice topic="volume" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["rumfang"][1]} />

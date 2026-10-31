@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -313,7 +313,7 @@ export default function SandsynlighedPage() {
       {/* Prøv selv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Sandsynlighedssimulator" description="Kast virtuelle terninger og mønter, og se hvordan den eksperimentelle sandsynlighed nærmer sig den teoretiske, jo flere kast du laver." icon="🎲" type="simulator" />
+        <TopicPractice topic="probability" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["sandsynlighed"][2]} />

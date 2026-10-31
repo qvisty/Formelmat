@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -175,12 +175,7 @@ export default function UlighederPage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Uligheds-løseren"
-          description="Indtast en ulighed og se løsningen trin for trin med visualisering på tallinje."
-          icon="↔️"
-          type="calculator"
-        />
+        <TopicPractice topic="inequalities" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["uligheder"][1]} />

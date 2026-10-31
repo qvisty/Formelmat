@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -179,12 +179,7 @@ export default function KombinatorikPage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Kombinatorik-beregner"
-          description="Indtast n og r, og se permutationer og kombinationer beregnet med mellemregninger."
-          icon="🎲"
-          type="calculator"
-        />
+        <TopicPractice topic="combinatorics" />
       </section>
 
       {/* Se også */}

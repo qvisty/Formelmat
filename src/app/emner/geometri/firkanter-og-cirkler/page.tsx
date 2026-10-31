@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -145,7 +145,7 @@ export default function FirkanterOgCirklerPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Firkant-udforskeren" description="Vælg en firkanttype og træk i hjørnerne. Se hvordan areal, omkreds, diagonaler og vinkler ændrer sig. Sammenlign de forskellige typer." icon="⬜" type="explorer" />
+        <TopicPractice topic="quadrilaterals" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["firkanter-og-cirkler"][0]} />

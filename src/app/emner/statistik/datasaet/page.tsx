@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -212,7 +212,7 @@ export default function DatasaetPage() {
       {/* Prøv selv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Frekvenstabell-bygger" description="Indtast dine egne data, og se dem automatisk organiseret i en tabel med hyppighed, summeret hyppighed og frekvens." icon="📋" type="calculator" />
+        <TopicPractice topic="datasets" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["datasaet"][0]} />

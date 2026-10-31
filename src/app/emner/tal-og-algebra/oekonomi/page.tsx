@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -199,7 +199,7 @@ export default function OekonomiPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Renteberegner" description="Indtast et startbeløb, en rentesats og antal år – og se hvordan din opsparing vokser år for år. Sammenlign forskellige rentesatser." icon="🏦" type="calculator" />
+        <TopicPractice topic="economy" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["oekonomi"][2]} />

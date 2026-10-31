@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -161,7 +161,7 @@ export default function FormlerOgUdtrykPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Udtryksforenkling" description="Skriv et algebraisk udtryk og se trin for trin, hvordan det forenkles. Øv dig med parenteser, kvadratsætninger og reducering." icon="✏️" type="visualizer" />
+        <TopicPractice topic="expressions" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["formler-og-udtryk"][1]} />

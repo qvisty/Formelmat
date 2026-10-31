@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -202,12 +202,7 @@ export default function ForholdPage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Proportionalitets-udforskeren"
-          description="Indtast to størrelser og se om de er direkte eller omvendt proportionale. Tegn grafen og find konstanten k."
-          icon="⚖️"
-          type="explorer"
-        />
+        <TopicPractice topic="proportionality" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["forhold-og-proportionalitet"][2]} />

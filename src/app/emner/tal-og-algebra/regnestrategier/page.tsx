@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { FractionVisualizer } from "@/components/FractionVisualizer";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -236,7 +236,7 @@ export default function RegnestrategierPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Regnehierarki-visualisering" description="Indtast et regneudtryk og se trin for trin, hvordan det udregnes i den rigtige rækkefølge. Parenteser først, så potenser, så gange/dividere, til sidst plus/minus." icon="🧮" type="visualizer" />
+        <TopicPractice topic="order-of-operations" />
       </section>
 
       <section>

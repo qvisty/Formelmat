@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { ThemedExample } from "@/components/ThemedExample";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
@@ -178,7 +178,7 @@ export default function PotensOgRoedderPage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder title="Potens- og rodberegner" description="Skriv et tal og en eksponent, og se udregningen trin for trin. Fx 2⁵ = 2 × 2 × 2 × 2 × 2 = 32." icon="📊" type="calculator" />
+        <TopicPractice topic="powers" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["potenser-og-roedder"][2]} />

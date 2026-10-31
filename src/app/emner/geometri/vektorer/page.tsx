@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InteractivePlaceholder } from "@/components/InteractivePlaceholder";
+import { TopicPractice } from "@/components/TopicPractice";
 import { EverydayExplanation } from "@/components/EverydayExplanation";
 import { hverdagsforklaringer } from "@/data/hverdagsforklaringer";
 
@@ -186,12 +186,7 @@ export default function VektorerPage() {
       {/* Interaktiv */}
       <section className="mb-10">
         <h2 className="text-xl font-bold mb-4">Prøv selv</h2>
-        <InteractivePlaceholder
-          title="Vektor-visualisering"
-          description="Tegn og flyt vektorer i et koordinatsystem. Se addition, subtraktion og skalering visuelt."
-          icon="➡️"
-          type="visualizer"
-        />
+        <TopicPractice topic="vectors" />
       </section>
 
       <EverydayExplanation {...hverdagsforklaringer["vektorer"][1]} />
