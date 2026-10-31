@@ -215,7 +215,7 @@ export default function GeometriTrigonometriPage() {
             Polygoner og trekanter &rarr;
           </Link>
           <Link
-            href="/emner/trigonometri/retvinklet-trekant"
+            href="/fagord#retvinklet-trekant"
             className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium hover:border-primary/30 hover:shadow-sm transition-all"
           >
             Den retvinklede trekant &rarr;

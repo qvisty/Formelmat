@@ -1,9 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+
+function subscribeToConnection(callback: () => void) {
+  window.addEventListener("online", callback);
+  window.addEventListener("offline", callback);
+
+  return () => {
+    window.removeEventListener("online", callback);
+    window.removeEventListener("offline", callback);
+  };
+}
+
+function getIsOffline() {
+  return !navigator.onLine;
+}
+
+function getServerIsOffline() {
+  return false;
+}
 
 export function PwaProvider({ children }: { children: React.ReactNode }) {
-  const [isOffline, setIsOffline] = useState(false);
+  const isOffline = useSyncExternalStore(
+    subscribeToConnection,
+    getIsOffline,
+    getServerIsOffline
+  );
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -14,16 +36,11 @@ export function PwaProvider({ children }: { children: React.ReactNode }) {
         .catch((err) => console.warn("SW registrering fejlede:", err));
     }
 
-    // Sæt initial online-status
-    setIsOffline(!navigator.onLine);
-
     const handleOffline = () => {
-      setIsOffline(true);
       setShowBanner(true);
     };
 
     const handleOnline = () => {
-      setIsOffline(false);
       // Skjul banneret efter 3 sekunder
       setTimeout(() => setShowBanner(false), 3000);
     };

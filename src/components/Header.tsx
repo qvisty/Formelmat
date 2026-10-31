@@ -11,11 +11,6 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close mobile menu on navigation
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (menuOpen) {
@@ -60,7 +55,11 @@ export function Header() {
             )}
           </button>
 
-          <Link href="/" className="flex items-center gap-2">
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2"
+          >
             <span className="text-2xl">📘</span>
             <span className="text-xl font-bold text-foreground">
               Formelmat
@@ -137,6 +136,7 @@ export function Header() {
                   <div key={topic.id}>
                     <Link
                       href={topic.href}
+                      onClick={() => setMenuOpen(false)}
                       className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                         isActive
                           ? "bg-primary-light text-primary"
@@ -154,6 +154,7 @@ export function Header() {
                             <Link
                               key={sub.id}
                               href={sub.href}
+                              onClick={() => setMenuOpen(false)}
                               className={`block rounded-md px-3 py-2 text-sm transition-colors ${
                                 subActive
                                   ? "text-primary font-medium"
@@ -172,6 +173,7 @@ export function Header() {
               <div className="pt-4 border-t border-border mt-4">
                 <Link
                   href="/fagord"
+                  onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                     pathname === "/fagord"
                       ? "bg-primary-light text-primary"

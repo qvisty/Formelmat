@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { topics } from "@/data/topics";
 import { ThemeSelector } from "@/components/ThemeSelector";
+
+export const metadata: Metadata = {
+  title: "Formelmat – Interaktiv formelsamling til matematik",
+  description:
+    "Slå hurtigt op i matematiske formler og fagord, og lær med interaktive visualiseringer til 7.-10. klasse.",
+};
 
 export default function Home() {
   return (

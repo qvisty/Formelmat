@@ -18,7 +18,6 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
   useEffect(() => {
     if (open) {
-      setQuery("");
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [open]);
@@ -28,12 +27,14 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
         if (open) {
+          setQuery("");
           onClose();
         } else {
           // Parent handles opening
         }
       }
       if (e.key === "Escape" && open) {
+        setQuery("");
         onClose();
       }
     }
@@ -43,9 +44,14 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
   if (!open) return null;
 
+  function closeModal() {
+    setQuery("");
+    onClose();
+  }
+
   function navigateTo(href: string) {
     router.push(href);
-    onClose();
+    closeModal();
   }
 
   const typeLabels = {
@@ -56,7 +62,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[5vh] sm:pt-[15vh]">
-      <div className="absolute inset-0 bg-black/40" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/40" onClick={closeModal} />
       <div className="relative w-full max-w-lg mx-2 sm:mx-4 bg-white rounded-xl shadow-2xl border border-border overflow-hidden">
         <div className="flex items-center gap-3 px-3 sm:px-4 py-3 border-b border-border">
           <svg

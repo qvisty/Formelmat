@@ -2,11 +2,12 @@
 
 ## Nuværende fase
 
-**Fase 1 – Fundament** (aktiv)
+**Fase 2 – Interaktiv udvidelse** (aktiv)
 
 ## Status
 
 MVP er implementeret med alt indhold fra PDF'en digitaliseret og interaktive komponenter bygget.
+Fase 1 er afsluttet. Fase 2 fokuserer nu på at færdiggøre interaktivitet, søgning og produktionskvalitet.
 
 ### Færdige milepæle
 
@@ -24,6 +25,7 @@ MVP er implementeret med alt indhold fra PDF'en digitaliseret og interaktive kom
 
 - [x] Opsætning af udviklingsstandarder (AGENTS.md, hooks, sync.sh)
 - [x] GeoGebra dynamisk integration på 7 indholdssider (geometry + graphing)
+- [x] Grundlæggende PWA-understøttelse med service worker og offline-side
 
 ### Næste skridt (Fase 2 – Interaktiv udvidelse)
 
@@ -31,7 +33,7 @@ MVP er implementeret med alt indhold fra PDF'en digitaliseret og interaktive kom
 - [ ] Forbedret søgning med fuzzy matching
 - [ ] Præsentationsvisning til lærerbrug
 - [ ] Animations og overgange
-- [ ] PWA-understøttelse for offline brug
+- [ ] Udvid offline-cachen og verificér PWA-installation på målplatforme
 
 ## Branch
 

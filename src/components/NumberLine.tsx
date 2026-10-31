@@ -97,7 +97,6 @@ export function NumberLine() {
 
   // Determine what type of number the current value is
   const isInteger = Number.isInteger(markerVal);
-  const isRational = !isInteger; // simplified: non-integer decimals we set via slider
   let taltype = "Helt tal (ℤ)";
   if (!isInteger) taltype = "Rationalt tal (ℚ)";
 

@@ -1,9 +1,16 @@
 // Formelmat Service Worker – cache-first strategi for offline brug
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_NAME = `formelmat-${CACHE_VERSION}`;
 
 // Ressourcer der pre-caches ved installation
-const PRECACHE_URLS = ["/", "/emner", "/fagord", "/offline"];
+const PRECACHE_URLS = [
+  "/",
+  "/emner/tal-og-algebra",
+  "/emner/geometri",
+  "/emner/statistik",
+  "/fagord",
+  "/offline",
+];
 
 // ---- Install ----
 self.addEventListener("install", (event) => {

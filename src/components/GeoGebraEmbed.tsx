@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 declare global {
   interface Window {
@@ -64,8 +64,6 @@ function loadGeoGebraScript(): Promise<void> {
   });
 }
 
-let instanceCounter = 0;
-
 export function GeoGebraEmbed({
   appName = "geometry",
   materialId,
@@ -79,7 +77,8 @@ export function GeoGebraEmbed({
   label,
 }: GeoGebraEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const idRef = useRef(`ggb-${++instanceCounter}`);
+  const reactId = useId();
+  const containerId = `ggb-${reactId.replaceAll(":", "")}`;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const injectedRef = useRef(false);
@@ -129,7 +128,7 @@ export function GeoGebraEmbed({
         }
 
         const applet = new window.GGBApplet(params, true);
-        applet.inject(idRef.current);
+        applet.inject(containerId);
         injectedRef.current = true;
         setLoading(false);
       } catch {
@@ -152,6 +151,7 @@ export function GeoGebraEmbed({
     showMenuBar,
     showAlgebraInput,
     showResetIcon,
+    containerId,
   ]);
 
   if (error) {
@@ -198,7 +198,7 @@ export function GeoGebraEmbed({
         )}
         <div
           ref={containerRef}
-          id={idRef.current}
+          id={containerId}
           className="w-full"
         />
       </div>
