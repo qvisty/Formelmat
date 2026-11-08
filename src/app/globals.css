@@ -10,6 +10,9 @@
   --surface: #f8fafc;
   --border: #e2e8f0;
   --muted: #64748b;
+  --motion-fast: 160ms;
+  --motion-calm: 240ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -76,10 +79,59 @@ body {
   background: white;
   touch-action: pan-y pinch-zoom;
   -webkit-overflow-scrolling: touch;
+  transition:
+    border-color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease;
 }
 
 .interactive-canvas:hover {
   border-color: var(--primary);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.06);
+}
+
+/* Calm transitions that reinforce navigation and layered UI. */
+.route-content {
+  animation: route-enter var(--motion-calm) var(--motion-ease) both;
+}
+
+.motion-backdrop {
+  animation: backdrop-enter var(--motion-fast) ease-out both;
+}
+
+.motion-dialog {
+  transform-origin: top center;
+  animation: dialog-enter var(--motion-calm) var(--motion-ease) both;
+}
+
+.motion-drawer {
+  animation: drawer-enter var(--motion-calm) var(--motion-ease) both;
+}
+
+@keyframes route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes backdrop-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.99);
+  }
+}
+
+@keyframes drawer-enter {
+  from {
+    transform: translateX(-12px);
+    opacity: 0;
+  }
 }
 
 /* Slider styling - touch-friendly */
@@ -169,7 +221,7 @@ html {
   font-size: 112.5%;
 }
 
-.presentation-content > div {
+.presentation-content .route-content > div {
   max-width: 72rem;
   padding-bottom: 6rem;
 }
@@ -201,6 +253,15 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

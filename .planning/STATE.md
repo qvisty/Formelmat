@@ -32,7 +32,7 @@ Fase 1 er afsluttet. Fase 2 fokuserer nu på at færdiggøre interaktivitet, sø
 - [x] Flere interaktive komponenter (tallinjer, brøkvisualiseringer og emnespecifikke miniøvelser)
 - [x] Forbedret søgning med fuzzy matching og tilgængelig søgemodal
 - [x] Præsentationsvisning til lærerbrug (global visning, tastaturgenvej og større formler)
-- [ ] Animations og overgange
+- [x] Rolige animationer og overgange med understøttelse af reduced motion
 - [ ] Udvid offline-cachen og verificér PWA-installation på målplatforme
 
 ## Branch

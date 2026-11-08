@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
 
 export function PresentationShell({ children }: { children: React.ReactNode }) {
   const [isPresenting, setIsPresenting] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -45,7 +47,9 @@ export function PresentationShell({ children }: { children: React.ReactNode }) {
             isPresenting ? "presentation-content" : ""
           }`}
         >
-          {children}
+          <div key={pathname} className="route-content">
+            {children}
+          </div>
         </main>
       </div>
 

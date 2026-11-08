@@ -107,14 +107,14 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[5vh] sm:pt-[15vh]">
-      <div className="absolute inset-0 bg-black/40" onClick={closeModal} aria-hidden="true" />
+      <div className="motion-backdrop absolute inset-0 bg-black/40" onClick={closeModal} aria-hidden="true" />
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="relative w-full max-w-lg mx-2 sm:mx-4 bg-white rounded-xl shadow-2xl border border-border overflow-hidden"
+        className="motion-dialog relative w-full max-w-lg mx-2 sm:mx-4 bg-white rounded-xl shadow-2xl border border-border overflow-hidden"
       >
         <h2 id={titleId} className="sr-only">Søg i Formelmat</h2>
         <p id={descriptionId} className="sr-only">

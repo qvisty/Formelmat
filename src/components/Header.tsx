@@ -41,7 +41,7 @@ export function Header() {
           {/* Hamburger button - mobile only */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 -ml-2 rounded-lg hover:bg-surface transition-colors"
+            className="lg:hidden flex items-center justify-center w-10 h-10 -ml-2 rounded-lg hover:bg-surface transition-colors active:scale-95"
             aria-label={menuOpen ? "Luk menu" : "Åbn menu"}
           >
             {menuOpen ? (
@@ -122,10 +122,10 @@ export function Header() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div
-            className="absolute inset-0 bg-black/40"
+            className="motion-backdrop absolute inset-0 bg-black/40"
             onClick={() => setMenuOpen(false)}
           />
-          <nav className="absolute top-[57px] left-0 bottom-0 w-72 max-w-[85vw] bg-white border-r border-border overflow-y-auto overscroll-contain">
+          <nav className="motion-drawer absolute top-[57px] left-0 bottom-0 w-72 max-w-[85vw] bg-white border-r border-border overflow-y-auto overscroll-contain">
             <div className="p-4 space-y-1">
               <p className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted">
                 Emner
