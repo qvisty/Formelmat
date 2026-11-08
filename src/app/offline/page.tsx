@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Du er offline – Formelmat",
-  description: "Ingen internetforbindelse. Besøg siderne først online for at bruge dem offline.",
+  description: "Ingen internetforbindelse. Formelmat gemmer opslagsværket til offline brug.",
 };
 
 export default function OfflinePage() {
@@ -28,11 +28,11 @@ export default function OfflinePage() {
         </div>
         <h1 className="text-2xl font-bold mb-3">Du er offline</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          Denne side er ikke gemt på din enhed endnu. Besøg den, mens du har
-          internetforbindelse, for at bruge den offline bagefter.
+          Denne side kunne ikke hentes lige nu. Når Formelmat har været åbnet
+          online én gang, kan du bruge hele opslagsværket uden netforbindelse.
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-500 mb-8">
-          Sider du allerede har besøgt, er tilgængelige offline.
+          Prøv forsiden eller forbind til internettet igen for at hente seneste udgave.
         </p>
         <Link
           href="/"

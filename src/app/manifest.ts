@@ -7,6 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description:
       "Interaktiv formelsamling til matematik for udskolingselever. Slå op i formler, fagord og forklaringer.",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#2563eb",
