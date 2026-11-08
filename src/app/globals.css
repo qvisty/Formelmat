@@ -164,6 +164,46 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Teacher presentation view */
+.presentation-mode {
+  font-size: 112.5%;
+}
+
+.presentation-content > div {
+  max-width: 72rem;
+  padding-bottom: 6rem;
+}
+
+.presentation-content h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.presentation-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.presentation-content .formula-box {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.presentation-content .formula-box .math-formula {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+@media print {
+  .presentation-toggle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Safe area padding for notched phones */
 @supports (padding: env(safe-area-inset-bottom)) {
   body {
