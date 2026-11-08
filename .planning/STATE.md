@@ -35,6 +35,13 @@ Fase 1 er afsluttet. Fase 2 fokuserer nu på at færdiggøre interaktivitet, sø
 - [x] Rolige animationer og overgange med understøttelse af reduced motion
 - [ ] Udvid offline-cachen og verificér PWA-installation på målplatforme
 
+### PWA-verifikation (QDI-43)
+
+- [x] Alle 33 emnesider, fagordsordbogen, forsiden og offline-siden forhåndscaches efter første besøg
+- [x] Versionsstyret cache (`formelmat-v3`) rydder tidligere Formelmat-caches ved aktivering
+- [x] Produktionsbuild og alle precache-URL'er er verificeret automatisk
+- [ ] Installation og offline-navigation skal slutverificeres på fysisk Android Chrome og iOS Safari
+
 ## Branch
 
 `claude/interactive-math-formulas-9hoHv`
